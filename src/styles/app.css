@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: "Copperplate Gothic", "Arial";
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}

@@ -1,0 +1,51 @@
+.playground {
+    width: 100vw;
+    height: 100vh;
+}
+
+.playground .leftPart {
+    width: 20%;
+    height: 100%;
+    background-color: #b3b3b3;
+    float: left;
+    box-shadow: 5px 0px 5px #cccccc;
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+.playground .leftPart:hover {
+    box-shadow: 2px 0px 5px #cccccc;
+}
+
+.playground .rightPart {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+.playground .leftPart .nav_btn {
+    border-style: none;
+    width: 90%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+    outline: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.playground .leftPart .nav_btn:hover {
+    color: orangered;
+}
+
+.playground .leftPart .nav_btn:active {
+    background-color: #333333;
+    color: yellow;
+}
