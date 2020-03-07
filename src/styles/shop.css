@@ -1,7 +1,6 @@
 div.shop {
     width: 100%;
     height: 100%;
-    background-color: black;
 }
 
 section.buyzone {
@@ -12,14 +11,13 @@ section.buyzone {
 #seedZone, #potZone {
     width: 40%;
     height: 100%;
-    background-color: red;
+    background-color: #cccccc;
     float: left;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
 #seedZone .seedItem {
-    background-color: yellow;
     width: 100%;
     height: 146px;
     box-sizing: border-box;
@@ -31,10 +29,45 @@ section.buyzone {
     width: 145px;
     height: 140px;
     background-color: white;
+    float: left;
+}
+
+#seedZone .seedItem .seedDesc {
+    width: 320px;
+    height: 140px;
+    float: left;
+}
+
+#seedZone .seedItem .seedDesc div {
+    background-color: yellow;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#seedZone .seedItem .seedDesc div:last-child {
+    background-color: #cccccc;
+}
+
+.seedDesc button {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+    border-radius: 10px;
+}
+
+.seedDesc button:active {
+    color: orangered;
 }
 
 #potZone .potItem {
-    background-color: cornsilk;
     width: 100%;
     height: 146px;
     box-sizing: border-box;
@@ -48,11 +81,132 @@ section.buyzone {
     background-color: white;
     box-sizing: border-box;
     padding-top: 40px;
+    float: left;
+}
+
+#potZone .potItem .potDesc {
+    width: 320px;
+    height: 140px;
+    float: left;
+}
+
+#potZone .potItem .potDesc div {
+    background-color: yellowgreen;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#potZone .potItem .potDesc div:last-child {
+    background-color: #cccccc;
+}
+
+.potDesc button {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+    border-radius: 10px;
+}
+
+.potDesc button:active {
+    color: orangered;
 }
 
 section.buyzone section {
     float: left;
-    background-color: aqua;
     width: 20%;
     height: 100%;
+}
+
+div#landZone, div#waterZone, div#paperZone {
+    background-color: white;
+    width: 100%;
+    height: 33.3%;
+    position: relative;
+}
+
+div#landZone img, div#waterZone img, div#paperZone img {
+    width: 100%;
+    height: 100%;
+}
+
+div#landZone button, div#waterZone button, div#paperZone button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 24px;
+    width: 100px;
+    height: 60px;
+    outline: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+div#landZone button:active, div#waterZone button:active, div#paperZone button:active {
+    color: orangered;
+}
+
+section.billZone {
+    background-color: yellow!important;
+    width: 100%;
+    height: 20%;
+}
+
+section.billZone .sum1 {
+    width: 100%;
+    height: 35%;
+    background-color: #ccffcc;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-left: 10px;
+    line-height: 26px;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+section.billZone .sum2 {
+    width: 100%;
+    height: 35%;
+    background-color: #ffffb3;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-left: 10px;
+    line-height: 26px;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
+
+section.billZone .operationZone {
+    width: 100%;
+    height: 30%;
+    background-color: #4d004d;
+}
+
+.operationZone #btn_left_box, .operationZone #btn_right_box {
+    float: left;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.operationZone #btn_left_box button, .operationZone #btn_right_box button {
+    width: 500px;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+}
+
+.operationZone #btn_left_box button:active, .operationZone #btn_right_box button:active {
+    color: orangered;
 }
