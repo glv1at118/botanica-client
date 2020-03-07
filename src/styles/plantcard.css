@@ -2,9 +2,9 @@
     width: 290px;
     height: 200px;
     float: left;
-    margin: 7px;
+    margin: 5px;
     border-radius: 5px;
-    box-shadow: 8px 8px 5px #808080;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     font-size: 12px;
     transition-duration: 75ms;
@@ -13,7 +13,7 @@
 }
 
 .plantcard:hover {
-    box-shadow: 2px 2px 5px #808080;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .plantcard .plantInfo {
@@ -27,7 +27,7 @@
 
 .plantcard .plantInfo .textInfo {
     width: 100%;
-    background-color: rgb(255, 255, 100);
+    background-color: white;
     height: 16px;
     margin-bottom: 3px;
     text-align: center;

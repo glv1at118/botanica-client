@@ -1,0 +1,112 @@
+.warehouse {
+    width: 100%;
+    height: 100%;
+}
+
+.warehouse .titleBar {
+    width: 100%;
+    height: 5%;
+    background-color: yellow;
+}
+
+.warehouse .titleBar .leftTitle, .warehouse .titleBar .rightTitle {
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.warehouse .placeholder {
+    width: 100%;
+    height: 90%;
+}
+
+.warehouse .placeholder .leftHouse, .warehouse .placeholder .rightHouse {
+    width: 50%;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #ffe066;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.warehouse .placeholder .leftHouse li, .warehouse .placeholder .rightHouse li {
+    background-color: white;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+}
+
+.warehouse .placeholder .leftHouse li:hover, .warehouse .placeholder .rightHouse li:hover {
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.warehouse .placeholder .leftHouse li .child1, .warehouse .placeholder .rightHouse li .child1 {
+    width: 145px;
+    height: 140px;
+    float: left;
+}
+
+.warehouse .placeholder .leftHouse li .child2, .warehouse .placeholder .rightHouse li .child2 {
+    width: 440px;
+    height: 100%;
+    float: left;
+}
+
+.warehouse .placeholder .leftHouse li .child2 div {
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 30%;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.warehouse .placeholder .rightHouse li .child2 div {
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 13%;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.warehouse .summaryBar {
+    width: 100%;
+    height: 5%;
+    text-align: center;
+}
+
+.warehouse .summaryBar button {
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 26px;
+    outline: none;
+    color: white;
+    background-color: #4d4d4d;
+}
+
+.warehouse .summaryBar button:active {
+    color: orangered;
+}

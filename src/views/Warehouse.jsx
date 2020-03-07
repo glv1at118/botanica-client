@@ -1,7 +1,185 @@
 import React from 'react';
+import '../styles/warehouse.css';
 
 export default class Warehouse extends React.Component {
     render() {
-        return <div>This is warehouse</div>
+        return (
+            <div className="warehouse">
+                <div className="titleBar">
+                    <div className="leftTitle">Fruits In Stock (325)</div>
+                    <div className="rightTitle">Seeds In Stock (45)</div>
+                </div>
+                <div className="placeholder">
+                    <ul className="leftHouse">
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Fruit Name: Guannan Tree's fruit</div>
+                                <div>Original Name: Plant_A's fruit</div>
+                                <div>Value Per Unit ($): 10</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul className="rightHouse">
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed-Sprout): 10mins</div>
+                                <div>Life Stage (Sprout-Sapling): 10mins</div>
+                                <div>Life Stage (Sapling-Premature): 10mins</div>
+                                <div>Life Stage (Premature-Ripe): 10mins</div>
+                                <div>Fruits Production Cycle: 20mins</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="child1">
+                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                            </div>
+                            <div className="child2">
+                                <div>Seed Name: Plant_A's Seed</div>
+                                <div>Life Stage (Seed->Sprout): 10mins</div>
+                                <div>Life Stage (Sprout->Sapling): 10mins</div>
+                                <div>Life Stage (Sapling->Premature): 10mins</div>
+                                <div>Life Stage (Premature->Ripe): 10mins</div>
+                                <div>Fruits Production (Every): 20mins</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className="summaryBar">
+                    <button>Sell All Fruits In Stock And Earn $800</button>
+                </div>
+            </div>
+        );
     }
 }

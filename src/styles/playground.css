@@ -8,14 +8,6 @@
     height: 100%;
     background-color: #b3b3b3;
     float: left;
-    box-shadow: 5px 0px 5px #cccccc;
-    transition-duration: 75ms;
-    transition-property: all;
-    transition-timing-function: ease-in-out;
-}
-
-.playground .leftPart:hover {
-    box-shadow: 2px 0px 5px #cccccc;
 }
 
 .playground .rightPart {

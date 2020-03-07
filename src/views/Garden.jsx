@@ -84,7 +84,7 @@ export default class Garden extends React.Component {
                     </li>
                     <li>
                         <div className="addNewPlant">
-                            <img src={require("../assets/add_plant.png")} alt="button image not accessible" onClick={this.addNewPlant} />
+                            <img src={require("../assets/misc/add_plant.png")} alt="button image not accessible" onClick={this.addNewPlant} />
                         </div>
                     </li>
                 </ul>
