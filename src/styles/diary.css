@@ -1,0 +1,221 @@
+div.diary {
+    width: 100%;
+    height: 100%;
+    background-color: #ccccff;
+}
+
+#diaryArea1 {
+    width: 100%;
+    height: 70%;
+}
+
+#diaryArea1 #diaryArea1_left {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+#sortDiaryBox {
+    width: 100%;
+    height: 10%;
+}
+
+#sortDiaryBox button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 22px;
+    font-weight: 700;
+    background-color: #ccffff;
+}
+
+#diaryList {
+    width: 100%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#diaryList .diaryItem {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.7);
+    transition-duration: 75ms;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+}
+
+#diaryList .diaryItem:hover {
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+#diaryList .diaryItem .diaryInfo {
+    background-color: #ffffb3;
+    width: 80%;
+    height: 100%;
+}
+
+#diaryList .diaryItem .diaryInfo .d_title {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 45px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#diaryList .diaryItem .diaryInfo .d_date {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 45px;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+#diaryList .diaryItem .diaryOps {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#diaryList .diaryItem .diaryOps button:first-child {
+    width: 100%;
+    height: 50%;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #b3ffb3;
+}
+
+#diaryList .diaryItem .diaryOps button:last-child {
+    width: 100%;
+    height: 50%;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ffb3b3;
+}
+
+#diaryList .diaryItem .diaryOps button:active {
+    color: orangered;
+}
+
+#diaryArea1 #diaryArea1_right {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+#diaryArea1 #diaryArea1_right #up {
+    width: 100%;
+    height: 90%;
+    background-color: #ffffb3;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#diaryArea1 #diaryArea1_right #up p {
+    font-size: 18px;
+}
+
+#diaryArea1 #diaryArea1_right #down {
+    width: 100%;
+    height: 10%;
+}
+
+#diaryArea1 #diaryArea1_right #down button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #ffb3d9;
+}
+
+#diaryArea2 {
+    width: 100%;
+    height: 22%;
+}
+
+#diaryArea2 input {
+    width: 100%;
+    height: 20%;
+    outline: none;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#diaryArea2 textarea {
+    width: 100%;
+    height: 80%;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 20px;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#diaryArea3 {
+    width: 100%;
+    height: 8%;
+}
+
+#diaryArea3 div.left {
+    width: 20%;
+    height: 100%;
+    float: left;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 60px;
+}
+
+#diaryArea3 div.right {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+#diaryArea3 div.right button:first-child {
+    width: 50%;
+    height: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    outline: none;
+    background-color: green;
+    color: #e6e6e6;
+    float: left;
+}
+
+#diaryArea3 div.right button:last-child {
+    width: 50%;
+    height: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    outline: none;
+    background-color: red;
+    color: #e6e6e6;
+    float: left;
+}
+
+#diaryArea3 div.right button:active {
+    color: yellow;
+}
