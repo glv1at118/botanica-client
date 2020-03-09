@@ -22,25 +22,34 @@ export default class AddPlantModal extends React.Component {
                                 <div className="left">
                                     <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
+                                <div className="right">
+                                    <div className="up">Seed Name: Plant_A_seed</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <div className="left">
                                     <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
+                                <div className="right">
+                                    <div className="up">Seed Name: Plant_A_seed</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <div className="left">
                                     <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
-                            </li>
-                            <li>
-                                <div className="left">
-                                    <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
+                                <div className="right">
+                                    <div className="up">Seed Name: Plant_A_seed</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
                                 </div>
-                                <div className="right"></div>
                             </li>
                         </ul>
                         <ul id="newPlantPotBox">
@@ -48,25 +57,34 @@ export default class AddPlantModal extends React.Component {
                                 <div className="left">
                                     <img src={require('../assets/pot/pot0.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
+                                <div className="right">
+                                    <div className="up">Pot Name: Pot1</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <div className="left">
                                     <img src={require('../assets/pot/pot0.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
+                                <div className="right">
+                                    <div className="up">Pot Name: Pot1</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
+                                </div>
                             </li>
                             <li>
                                 <div className="left">
                                     <img src={require('../assets/pot/pot0.png')} alt="" />
                                 </div>
-                                <div className="right"></div>
-                            </li>
-                            <li>
-                                <div className="left">
-                                    <img src={require('../assets/pot/pot0.png')} alt="" />
+                                <div className="right">
+                                    <div className="up">Pot Name: Pot1</div>
+                                    <div className="down">
+                                        <div>Select</div>
+                                    </div>
                                 </div>
-                                <div className="right"></div>
                             </li>
                         </ul>
                     </div>

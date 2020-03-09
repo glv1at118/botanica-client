@@ -174,7 +174,7 @@ export default class Shop extends React.Component {
                         A seed: 30; B seed: 40; C seed: 10; D seed: 10; E seed: 10; F seed: 10; G seed: 10; H seed: 10; I seed: 10; J seed: 10; K seed: 10; L seed: 10; M seed: 10; N seed: 10; O seed: 10; P seed: 10;
                     </div>
                     <div className="sum2">
-                        pot 0: 10; pot 1: 10; pot 2: 10; pot 3: 10; pot 4: 10; pot 5: 10; pot 6: 10; pot 7: 10; pot 8: 10; pot 9: 10;<br />land: 2; water: 30; paper: 10;
+                        pot 0: 10; pot 1: 10; pot 2: 10; pot 3: 10; pot 4: 10; pot 5: 10; pot 6: 10; pot 7: 10; pot 8: 10; pot 9: 10;<br />======== land: 2; ======== water: 30; ======== paper: 10; ========
                     </div>
                     <div className="operationZone">
                         <div id="btn_left_box">

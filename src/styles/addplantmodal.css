@@ -5,16 +5,17 @@
     left: 0px;
     top: 0px;
     background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
 }
 
 .addPlantBox .addPlantWindow {
     width: 80%;
     height: 80%;
-    background-color: #666666;
+    background-color: #ff8080;
     position: absolute;
     left: 10%;
     top: 10%;
-    border-radius: 5%;
+    border-radius: 10px;
     box-sizing: border-box;
     padding: 40px;
 }
@@ -36,17 +37,18 @@
     box-sizing: border-box;
     padding: 10px;
     font-size: 30px;
+    border-radius: 10px;
 }
 
 .addPlantBox .addPlantWindow #newPlantNameBox input:focus {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid skyblue;
 }
 
 .addPlantBox .addPlantWindow #midPlaceHolder {
     width: 100%;
     height: 68%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
 }
 
 .addPlantBox .addPlantWindow #midPlaceHolder #newPlantSeedBox {
@@ -64,6 +66,7 @@
     box-sizing: border-box;
     overflow: hidden;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 #newPlantSeedBox .left {
@@ -76,8 +79,27 @@
 #newPlantSeedBox .right {
     height: 100%;
     float: left;
-    width: 290px;
+    width: 280px;
+}
+
+#newPlantSeedBox .right .up, #newPlantSeedBox .right .down {
+    width: 100%;
+    height: 50%;
     background-color: white;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#newPlantSeedBox .right .down {
+    background-color: gainsboro;
 }
 
 .addPlantBox .addPlantWindow #midPlaceHolder #newPlantPotBox {
@@ -95,6 +117,7 @@
     box-sizing: border-box;
     overflow: hidden;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 #newPlantPotBox .left {
@@ -114,8 +137,27 @@
 #newPlantPotBox .right {
     height: 100%;
     float: left;
-    width: 290px;
+    width: 280px;
+}
+
+#newPlantPotBox .right .up, #newPlantPotBox .right .down {
+    width: 100%;
+    height: 50%;
     background-color: white;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+    border: 5px solid white;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#newPlantPotBox .right .down {
+    background-color: gainsboro;
 }
 
 .addPlantBox .addPlantWindow #buttonBox {
@@ -125,13 +167,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15px;
 }
 
 #buttonBox #con, #buttonBox #can {
     height: 80%;
     width: 40%;
     outline: none;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 26px;
     font-weight: bold;
 }

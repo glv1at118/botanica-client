@@ -1,9 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import UserBoard from '../components/UserBoard.jsx';
 import Garden from '../views/Garden.jsx';
 import Shop from '../views/Shop.jsx';
 import Warehouse from '../views/Warehouse.jsx';
+import Diary from '../views/Diary.jsx';
 
 import '../styles/playground.css';
 
@@ -13,6 +14,7 @@ export default class Playground extends React.Component {
         this.goToGarden = this.goToGarden.bind(this);
         this.goToShop = this.goToShop.bind(this);
         this.goToWarehouse = this.goToWarehouse.bind(this);
+        this.goToDiary = this.goToDiary.bind(this);
     }
     goToGarden() {
         this.props.history.push("/playground/garden");
@@ -23,6 +25,9 @@ export default class Playground extends React.Component {
     goToWarehouse() {
         this.props.history.push("/playground/warehouse");
     }
+    goToDiary() {
+        this.props.history.push("/playground/diary");
+    }
     render() {
         return (
             <section className="playground">
@@ -31,15 +36,17 @@ export default class Playground extends React.Component {
                     <button className="nav_btn" onClick={this.goToGarden}>Garden</button>
                     <button className="nav_btn" onClick={this.goToWarehouse}>Warehouse</button>
                     <button className="nav_btn" onClick={this.goToShop}>Shop</button>
+                    <button className="nav_btn" onClick={this.goToDiary}>Diary</button>
                     <button className="nav_btn">Friends</button>
-                    <button className="nav_btn">Diary</button>
                     <button className="nav_btn">Encyclopedia</button>
                 </div>
                 <div className="rightPart">
                     <Switch>
                         <Route path="/playground/garden" component={Garden}></Route>
-                        <Route path="/playground/shop" component={Shop}></Route>
                         <Route path="/playground/warehouse" component={Warehouse}></Route>
+                        <Route path="/playground/shop" component={Shop}></Route>
+                        <Route path="/playground/diary" component={Diary}></Route>
+                        <Redirect to="/playground/garden"></Redirect>
                     </Switch>
                 </div>
             </section>

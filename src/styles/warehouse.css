@@ -22,7 +22,7 @@
 
 .warehouse .placeholder {
     width: 100%;
-    height: 90%;
+    height: 75%;
 }
 
 .warehouse .placeholder .leftHouse, .warehouse .placeholder .rightHouse {
@@ -109,4 +109,60 @@
 
 .warehouse .summaryBar button:active {
     color: orangered;
+}
+
+#ownedPot {
+    width: 100%;
+    height: 15%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#ownedPot .ownedPotTitle {
+    width: 10%;
+    height: 100%;
+    background-color: yellow;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 7px;
+    float: left;
+}
+
+#ownedPot ul {
+    height: 100%;
+    width: 90%;
+    background-color: white;
+    float: left;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    /* need to set the ul's li items to display horizontally and scroll horizontally.
+    So here need to set the father ul to white-space: nowrap */
+}
+
+#ownedPot ul li {
+    width: 145px;
+    height: 100%;
+    margin-right: 5px;
+    margin-left: 10px;
+    /* float: left; */ /* Not effective */
+    /* need to set the ul's li items to display horizontally and scroll horizontally.
+    So here need to set the son li to display: inline-block. float:left cannot be used on son. If using float then the 
+    inline-block will lose effect, then all the li(s) will never display horizontally. Messy thing!!! */
+    display: inline-block;
+}
+
+#ownedPot ul li img {
+    width: 144px;
+    height: 60px;
+}
+
+#ownedPot ul li div {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
 }

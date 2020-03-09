@@ -5,6 +5,9 @@ export default class Warehouse extends React.Component {
     render() {
         return (
             <div className="warehouse">
+                <div className="summaryBar">
+                    <button>Sell All Fruits In Stock And Earn $800</button>
+                </div>
                 <div className="titleBar">
                     <div className="leftTitle">Fruits In Stock (325)</div>
                     <div className="rightTitle">Seeds In Stock (45)</div>
@@ -176,8 +179,58 @@ export default class Warehouse extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <div className="summaryBar">
-                    <button>Sell All Fruits In Stock And Earn $800</button>
+                <div id="ownedPot">
+                    <div className="ownedPotTitle">My Owned Pots</div>
+                    <ul>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <div className="ownedPotDesc">Pot 8</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         );
