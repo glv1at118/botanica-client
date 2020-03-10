@@ -32,13 +32,13 @@ export default class Playground extends React.Component {
         return (
             <section className="playground">
                 <div className="leftPart">
-                    <UserBoard></UserBoard>
                     <button className="nav_btn" onClick={this.goToGarden}>Garden</button>
                     <button className="nav_btn" onClick={this.goToWarehouse}>Warehouse</button>
                     <button className="nav_btn" onClick={this.goToShop}>Shop</button>
                     <button className="nav_btn" onClick={this.goToDiary}>Diary</button>
                     <button className="nav_btn">Friends</button>
                     <button className="nav_btn">Encyclopedia</button>
+                    <UserBoard></UserBoard>
                 </div>
                 <div className="rightPart">
                     <Switch>
