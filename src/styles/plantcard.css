@@ -41,6 +41,18 @@
     outline: none;
 }
 
+.plantcard .plantInfo .water {
+    background-color: #80ffff;
+}
+
+.plantcard .plantInfo .harvest {
+    background-color: #ffff80;
+}
+
+.plantcard .plantInfo .sell {
+    background-color: #ff9999;
+}
+
 .plantcard .plantInfo .operateBtn:active {
     color: orangered;
 }

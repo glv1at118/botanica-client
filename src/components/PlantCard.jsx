@@ -13,9 +13,9 @@ export default class PlantCard extends React.Component {
                     <div className="textInfo"><b>Speciality:</b> News</div>
                     <div className="textInfo"><b>Hydration:</b> 10/10</div>
                     <div className="textInfo"><b>Yield:</b> 35/35</div>
-                    <button className="operateBtn"><b>Water</b></button><br />
-                    <button className="operateBtn"><b>Harvest</b></button><br />
-                    <button className="operateBtn"><b>Sell</b></button><br />
+                    <button className="operateBtn water"><b>Water</b></button><br />
+                    <button className="operateBtn harvest"><b>Harvest</b></button><br />
+                    <button className="operateBtn sell"><b>Sell</b></button><br />
                 </div>
                 <div className="plantImg">
                     <div className="plantBody">
