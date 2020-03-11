@@ -16,7 +16,7 @@ export default class Warehouse extends React.Component {
                     <ul className="leftHouse">
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -26,7 +26,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -36,7 +36,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -46,7 +46,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -56,7 +56,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -66,7 +66,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -76,7 +76,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_fruit.png')} alt="fruit not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
                             </div>
                             <div className="child2">
                                 <div>Fruit Name: Guannan Tree's fruit</div>
@@ -88,7 +88,7 @@ export default class Warehouse extends React.Component {
                     <ul className="rightHouse">
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -101,7 +101,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -114,7 +114,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -127,7 +127,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -140,7 +140,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -153,7 +153,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -166,7 +166,7 @@ export default class Warehouse extends React.Component {
                         </li>
                         <li>
                             <div className="child1">
-                                <img src={require('../assets/plant/plant_M_seed.png')} alt="seed not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
                             </div>
                             <div className="child2">
                                 <div>Seed Name: Plant_A's Seed</div>
@@ -183,51 +183,51 @@ export default class Warehouse extends React.Component {
                     <div className="ownedPotTitle">My Owned Pots</div>
                     <ul>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                         <li>
-                            <img src={require('../assets/pot/pot8.png')} alt="pot image not accessible" />
+                            <img alt="" src={require('../assets/pot/pot8.png')} />
                             <div className="ownedPotDesc">Pot 8</div>
                         </li>
                     </ul>

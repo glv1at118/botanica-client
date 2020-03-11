@@ -2,6 +2,8 @@ import React from 'react';
 import StatusBar from '../components/StatusBar.jsx';
 import PlantCard from '../components/PlantCard.jsx';
 import AddPlantModal from '../components/AddPlantModal.jsx';
+import { reduxStore } from '../redux/store.js';
+
 import '../styles/garden.css';
 
 export default class Garden extends React.Component {
@@ -37,54 +39,18 @@ export default class Garden extends React.Component {
                 </div>
                 <StatusBar></StatusBar>
                 <ul className="cards">
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
-                    <li>
-                        <PlantCard></PlantCard>
-                    </li>
+                    {
+                        reduxStore.getState().userData.plantList.map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <PlantCard plantName={item.plantName} customName={item.customName} speciality={item.speciality}></PlantCard>
+                                </li>
+                            );
+                        })
+                    }
                     <li>
                         <div className="addNewPlant">
-                            <img src={require("../assets/misc/add_plant.png")} alt="button image not accessible" onClick={this.addNewPlant} />
+                            <img src={require("../assets/misc/add_plant.png")}  alt="" onClick={this.addNewPlant} />
                         </div>
                     </li>
                 </ul>

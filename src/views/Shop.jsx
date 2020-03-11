@@ -9,7 +9,7 @@ export default class Shop extends React.Component {
                     <ul id="seedZone">
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -21,7 +21,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -33,7 +33,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -45,7 +45,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -57,7 +57,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -69,7 +69,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="seedItem">
                             <div className="seedImg">
-                                <img src={require('../assets/plant/plant_A_seed.png')} alt="seed image not accessible" />
+                                <img alt="" src={require('../assets/plant/plant_A_seed.png')} />
                             </div>
                             <div className="seedDesc">
                                 <div>Seed Name: plant_A_seed</div>
@@ -83,7 +83,7 @@ export default class Shop extends React.Component {
                     <ul id="potZone">
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -95,7 +95,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -107,7 +107,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -119,7 +119,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -131,7 +131,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -143,7 +143,7 @@ export default class Shop extends React.Component {
                         </li>
                         <li className="potItem">
                             <div className="potImg">
-                                <img src={require('../assets/pot/pot2.png')} alt="pot image not accessible" />
+                                <img alt="" src={require('../assets/pot/pot2.png')} />
                             </div>
                             <div className="potDesc">
                                 <div>Pot Name: pot1</div>
@@ -156,15 +156,15 @@ export default class Shop extends React.Component {
                     </ul>
                     <section>
                         <div id="landZone">
-                            <img src={require('../assets/misc/land.jpg')} alt="land not accessible" />
+                            <img alt="" src={require('../assets/misc/land.jpg')} />
                             <button>Buy Land</button>
                         </div>
                         <div id="waterZone">
-                            <img src={require('../assets/misc/water.jpg')} alt="water not accessible" />
+                            <img alt="" src={require('../assets/misc/water.jpg')} />
                             <button>Buy Water</button>
                         </div>
                         <div id="paperZone">
-                            <img src={require('../assets/misc/paper.jpg')} alt="paper not accessible" />
+                            <img alt="" src={require('../assets/misc/paper.jpg')} />
                             <button>Buy Paper</button>
                         </div>
                     </section>

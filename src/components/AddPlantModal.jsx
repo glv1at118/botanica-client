@@ -20,7 +20,7 @@ export default class AddPlantModal extends React.Component {
                         <ul id="newPlantSeedBox">
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
+                                    <img alt="" src={require('../assets/plant/plant_O_seed.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Seed Name: Plant_A_seed</div>
@@ -31,7 +31,7 @@ export default class AddPlantModal extends React.Component {
                             </li>
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
+                                    <img alt="" src={require('../assets/plant/plant_O_seed.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Seed Name: Plant_A_seed</div>
@@ -42,7 +42,7 @@ export default class AddPlantModal extends React.Component {
                             </li>
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/plant/plant_O_seed.png')} alt="" />
+                                    <img alt="" src={require('../assets/plant/plant_O_seed.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Seed Name: Plant_A_seed</div>
@@ -55,7 +55,7 @@ export default class AddPlantModal extends React.Component {
                         <ul id="newPlantPotBox">
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/pot/pot0.png')} alt="" />
+                                    <img alt="" src={require('../assets/pot/pot0.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Pot Name: Pot1</div>
@@ -66,7 +66,7 @@ export default class AddPlantModal extends React.Component {
                             </li>
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/pot/pot0.png')} alt="" />
+                                    <img alt="" src={require('../assets/pot/pot0.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Pot Name: Pot1</div>
@@ -77,7 +77,7 @@ export default class AddPlantModal extends React.Component {
                             </li>
                             <li>
                                 <div className="left">
-                                    <img src={require('../assets/pot/pot0.png')} alt="" />
+                                    <img alt="" src={require('../assets/pot/pot0.png')} />
                                 </div>
                                 <div className="right">
                                     <div className="up">Pot Name: Pot1</div>
