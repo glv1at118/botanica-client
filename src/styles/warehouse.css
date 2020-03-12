@@ -57,6 +57,20 @@
     width: 145px;
     height: 140px;
     float: left;
+    position: relative;
+}
+
+.warehouse .placeholder .leftHouse li .child1 .count, .warehouse .placeholder .rightHouse li .child1 .count {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 20px;
+    background-color: #00ff00;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
 }
 
 .warehouse .placeholder .leftHouse li .child2, .warehouse .placeholder .rightHouse li .child2 {
@@ -143,11 +157,13 @@
 }
 
 #ownedPot ul li {
+    position: relative;
     width: 145px;
     height: 100%;
     margin-right: 5px;
     margin-left: 10px;
-    /* float: left; */ /* Not effective */
+    /* float: left; */
+    /* Not effective */
     /* need to set the ul's li items to display horizontally and scroll horizontally.
     So here need to set the son li to display: inline-block. float:left cannot be used on son. If using float then the 
     inline-block will lose effect, then all the li(s) will never display horizontally. Messy thing!!! */
@@ -165,4 +181,18 @@
     font-weight: bold;
     text-align: center;
     line-height: 30px;
+}
+
+#ownedPot ul li .count {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 20px;
+    background-color: #00ff00;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 20px;
 }

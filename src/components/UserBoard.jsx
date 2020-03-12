@@ -42,7 +42,7 @@ export default class UserBoard extends React.Component {
                         <section id="userSec1_right_down">Coins($): {reduxStore.getState().userData.ownedCoins}</section>
                     </section>
                 </section>
-                <section id="userSec2">I'm Online: {this.state.onlineMinutes} mins {this.state.onlineSeconds} s</section>
+                <section id="userSec2">I'm Online: {this.state.onlineMinutes} min(s) {this.state.onlineSeconds} s</section>
                 <section id="userSec3">My Total Diaries: {reduxStore.getState().userData.diaryList.length}</section>
                 <section id="userSec4">
                     <button>Exit Botanica</button>

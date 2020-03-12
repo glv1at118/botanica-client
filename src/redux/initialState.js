@@ -514,6 +514,15 @@ export const initialState = {
             //     diaryContent: "This is a diary content... This is a diary content... "
             // }
         ],
+        // [plantA seed count, plantB seed count, ..., plantP seed count]
+        // ownedSeeds: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from purchase
+        ownedSeeds: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15, 0, 5, 6, 9, 9, 1],
+        // [pot0 count, pot1 count, ..., pot9 count]
+        // ownedPots: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from purchase
+        ownedPots: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15],
+        // [plantA fruit count, plantB fruit count, ..., plantP fruit count]
+        ownedFruits: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15, 0, 5, 6, 9, 9, 1],
+        // ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from harvest
         ownedCoins: 3500,
         ownedPaper: 4
     }
