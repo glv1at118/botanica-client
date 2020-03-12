@@ -2,7 +2,7 @@ function removeDiary(diaryDateMilliSec) {
     return {
         type: "REMOVE_DIARY",
         diaryDateMilliSec
-    }
+    };
 }
 
 function addDiary(diaryContentObj) {
@@ -12,10 +12,24 @@ function addDiary(diaryContentObj) {
     };
 }
 
-function reverseDiaryOrder(){
+function reverseDiaryOrder() {
     return {
         type: "REVERSE_DIARY_ORDER"
     };
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder };
+function changeBalance(balanceAdjustment) {
+    return {
+        type: "CHANGE_BALANCE",
+        balanceAdjustment
+    };
+}
+
+function changePaper(paperAdjustment) {
+    return {
+        type: "CHANGE_PAPER",
+        paperAdjustment
+    };
+}
+
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper };

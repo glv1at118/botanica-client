@@ -357,6 +357,145 @@ export const initialState = {
             seedImg: "../assets/plant/plant_P_seed.png"
         }
     },
+    shopProducts: {
+        seeds: [
+            {
+                seedName: "Plant A's Seed",
+                seedPrice: 5,
+                identity: 1
+            },
+            {
+                seedName: "Plant B's Seed",
+                seedPrice: 5,
+                identity: 2
+            },
+            {
+                seedName: "Plant C's Seed",
+                seedPrice: 5,
+                identity: 3
+            },
+            {
+                seedName: "Plant D's Seed",
+                seedPrice: 5,
+                identity: 4
+            },
+            {
+                seedName: "Plant E's Seed",
+                seedPrice: 5,
+                identity: 5
+            },
+            {
+                seedName: "Plant F's Seed",
+                seedPrice: 5,
+                identity: 6
+            },
+            {
+                seedName: "Plant G's Seed",
+                seedPrice: 5,
+                identity: 7
+            },
+            {
+                seedName: "Plant H's Seed",
+                seedPrice: 5,
+                identity: 8
+            },
+            {
+                seedName: "Plant I's Seed",
+                seedPrice: 5,
+                identity: 9
+            },
+            {
+                seedName: "Plant J's Seed",
+                seedPrice: 5,
+                identity: 10
+            },
+            {
+                seedName: "Plant K's Seed",
+                seedPrice: 5,
+                identity: 11
+            },
+            {
+                seedName: "Plant L's Seed",
+                seedPrice: 5,
+                identity: 12
+            },
+            {
+                seedName: "Plant M's Seed",
+                seedPrice: 5,
+                identity: 13
+            },
+            {
+                seedName: "Plant N's Seed",
+                seedPrice: 5,
+                identity: 14
+            },
+            {
+                seedName: "Plant O's Seed",
+                seedPrice: 5,
+                identity: 15
+            },
+            {
+                seedName: "Plant P's Seed",
+                seedPrice: 5,
+                identity: 16
+            }
+        ],
+        pots: [
+            {
+                potName: "Plant Pot 0",
+                potPrice: 10,
+                identity: 0
+            },
+            {
+                potName: "Plant Pot 1",
+                potPrice: 10,
+                identity: 1
+            },
+            {
+                potName: "Plant Pot 2",
+                potPrice: 10,
+                identity: 2
+            },
+            {
+                potName: "Plant Pot 3",
+                potPrice: 10,
+                identity: 3
+            },
+            {
+                potName: "Plant Pot 4",
+                potPrice: 10,
+                identity: 4
+            },
+            {
+                potName: "Plant Pot 5",
+                potPrice: 10,
+                identity: 5
+            },
+            {
+                potName: "Plant Pot 6",
+                potPrice: 10,
+                identity: 6
+            },
+            {
+                potName: "Plant Pot 7",
+                potPrice: 10,
+                identity: 7
+            },
+            {
+                potName: "Plant Pot 8",
+                potPrice: 10,
+                identity: 8
+            },
+            {
+                potName: "Plant Pot 9",
+                potPrice: 10,
+                identity: 9
+            }
+        ],
+        land: 50, // 50$ per 1 unit
+        water: 5, // 5$ per 10 unit. Each click you buy 10 buckets of water
+        paper: 10 // 10$ per 1 unit.
+    },
     userData: {
         plantList: [
             // schema is like this
@@ -367,13 +506,15 @@ export const initialState = {
             }
         ],
         diaryList: [
-            // // schema is like this
+            // schema is like this
             // {
             //     diaryTitle: "A diary title",
             //     diaryDateStr: "A diary date",
             //     diaryDateMilliSec: 105645343156,
             //     diaryContent: "This is a diary content... This is a diary content... "
             // }
-        ]
+        ],
+        ownedCoins: 3500,
+        ownedPaper: 4
     }
 };

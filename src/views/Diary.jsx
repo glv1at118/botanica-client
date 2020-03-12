@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/diary.css';
 import { reduxStore } from '../redux/store.js';
-import { removeDiary, addDiary, reverseDiaryOrder } from '../redux/actions.js';
+import { removeDiary, addDiary, reverseDiaryOrder, changePaper } from '../redux/actions.js';
 
 export default class Diary extends React.Component {
     constructor(props) {
@@ -12,10 +12,24 @@ export default class Diary extends React.Component {
             textareaContent: "",
             openedDiaryTitle: "",
             openedDiaryDate: "",
-            openedDiaryContent: ""
+            openedDiaryContent: "",
+            writePermission: false
         };
     }
-
+    componentDidMount() {
+        this.checkWritePermission();
+    }
+    checkWritePermission = () => {
+        if (reduxStore.getState().userData.ownedPaper > 0) {
+            this.setState({
+                writePermission: true
+            });
+        } else {
+            this.setState({
+                writePermission: false
+            });
+        }
+    }
     reverseOrder = () => {
         if (this.state.reverseButtonText === "Descending") {
             this.setState({
@@ -64,9 +78,8 @@ export default class Diary extends React.Component {
             alert("YOU CANNOT SUBMIT A DIARY WITHOUT A TITLE OR TEXT.");
             return;
         }
-
         let d = new Date();
-        let str = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate() + "[" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "]";
+        let str = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate() + " [" + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "]";
         let diaryContentObj = {
             diaryTitle: this.state.inputContent,
             diaryDateStr: str,
@@ -86,6 +99,8 @@ export default class Diary extends React.Component {
                 inputContent: "",
                 textareaContent: ""
             });
+            reduxStore.dispatch(changePaper(-1));
+            this.checkWritePermission();
         }
     }
 
@@ -121,7 +136,7 @@ export default class Diary extends React.Component {
                 <section id="diaryArea1">
                     <section id="diaryArea1_left">
                         <div id="sortDiaryBox">
-                            <button onClick={this.reverseOrder}>Reverse (Date {this.state.reverseButtonText})</button>
+                            <button onClick={this.reverseOrder}>Sort By (Date {this.state.reverseButtonText})</button>
                         </div>
                         <ul id="diaryList">
                             {
@@ -153,11 +168,11 @@ export default class Diary extends React.Component {
                     </section>
                 </section>
                 <section id="diaryArea2">
-                    <input type="text" placeholder="write your diary title...Note: If there's no diary paper left, set this input to disabled!!!" value={this.state.inputContent} onChange={this.handleInputChange} />
-                    <textarea name="diaryInput" placeholder="write a new diary...Note: If there's no diary paper left, set this textarea to disabled!!!" value={this.state.textareaContent} onChange={this.handleTextareaChange} ></textarea>
+                    <input type="text" placeholder="Life In Botanica...(Diary Title Here)" value={this.state.inputContent} onChange={this.handleInputChange} disabled={!this.state.writePermission} />
+                    <textarea name="diaryInput" placeholder="Botanica is dynamic, reactive, and full of sunshine...(Diary Text Here)" value={this.state.textareaContent} onChange={this.handleTextareaChange} disabled={!this.state.writePermission}></textarea>
                 </section>
                 <section id="diaryArea3">
-                    <div className="left">Diary Paper(s): 3</div>
+                    <div className="left">Diary Paper(s): {reduxStore.getState().userData.ownedPaper}</div>
                     <div className="right">
                         <button onClick={this.submitDiary}>Submit Diary</button>
                         <button onClick={this.clearWritePane}>Clear All Text</button>

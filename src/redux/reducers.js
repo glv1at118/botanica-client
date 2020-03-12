@@ -19,6 +19,12 @@ function myReducer(previousState = initialState, action) {
         case "REVERSE_DIARY_ORDER":
             diaryArr.reverse();
             return nextState;
+        case "CHANGE_BALANCE":
+            nextState.userData.ownedCoins += action.balanceAdjustment;
+            return nextState;
+        case "CHANGE_PAPER":
+            nextState.userData.ownedPaper += action.paperAdjustment;
+            return nextState;
         default:
             return previousState;
     }

@@ -169,6 +169,20 @@ div#landZone button:active, div#waterZone button:active, div#paperZone button:ac
     color: orangered;
 }
 
+div#landZone .priceLabel, div#waterZone .priceLabel, div#paperZone .priceLabel {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 30%;
+    top: 35%;
+    right: 0;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+
 section.billZone {
     width: 100%;
     height: 20%;
