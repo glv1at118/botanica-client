@@ -368,22 +368,60 @@ export const initialState = {
         water: 5, // 5$ per 10 unit. Each click you buy 10 buckets of water
         paper: 10 // 10$ per 1 unit.
     },
+    greetingsPresets: [
+        "HI! HOW ARE YOU TODAY?",
+        "I LIKE YOU, DO YOU LIKE ME?",
+        "WHAT IS BOTANICA? BOTANICA IS BOTANICA!",
+        "DON'T FORGET TO WATER ME OFTEN :)",
+        "ONCE I AM FULLY GROWN, I CAN PRODUCE FRUITS!",
+        "HAVE YOU LEARNT ANYTHING NEW TODAY?",
+        "EVERYDAY IS A NEW DAY.",
+        "MANY OF US HAVE SPECIAL ABILITIES!",
+        "DO YOU LIKE TO PLAY WITH ME?",
+        "I LIKE BEES, I LIKE BEES :)",
+        "AN APPLE A DAY KEEPS THE DOCTOR AWAY.",
+        "DO YOU KNOW WHAT HELLO WORLD MEANS?",
+        "WELCOME TO BOTANICA!",
+        "WATER IS VERY IMPORTANT TO EVERYONE OF US.",
+        "YOU CAN SELL FRUITS TO EARN COINS!",
+        "HA HA HA HA......",
+        "HEY! YOU'RE BACK!",
+        "I AM A LITTLE LITTLE HAPPY PLANT :D",
+        "I AM GOOD AT VUE AND REACT, WHAT ABOUT YOU?",
+        "CAN YOU TELL ME YOUR STORY?",
+        "SUNSHINE IS ALWAYS IN YOUR HEART!",
+        "GOD BLESS YOU ~~",
+        "AM I BEAUTIFUL?",
+        "IF YOU BUY A NEW SEED, IT MAY COME WITH A SPECIAL ABILITY!",
+        "I LOVE THIS FLOWER POT SO MUCH.",
+        "Zzzz...... Zzzz......",
+        "(✿◡‿◡)",
+        "(o゜▽゜)o☆",
+        "(。・∀・)ノ",
+        "(✿◕‿◕✿)",
+        "(⊙_⊙)？",
+        "╰(*°▽°*)╯",
+        "ヾ(＠⌒ー⌒＠)ノ",
+        "(●'◡'●)",
+        "(๑•̀ㅂ•́)و✧"
+    ],
     userData: {
-        plantList: [
-            // schema is like this
+        plantPotList: [
             {
-                plantName: "Plant A",
+                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
                 customName: "Custom name",
-                speciality: "News"
+                speciality: "News",
+                apiUrl: ""
             }
         ],
         diaryList: [
-            // schema is like this
+            // Each element in the diaryList array has this kind of data structure
             // {
             //     diaryTitle: "A diary title",
             //     diaryDateStr: "A diary date",
             //     diaryDateMilliSec: 105645343156,
-            //     diaryContent: "This is a diary content... This is a diary content... "
+            //     diaryContent: "This is diary content..."
             // }
         ],
 
