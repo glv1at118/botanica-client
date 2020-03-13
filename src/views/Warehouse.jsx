@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/warehouse.css';
 import { reduxStore } from '../redux/store.js';
+import { changeBalance, emptyAllFruits } from '../redux/actions.js';
 
 import fruitPath0 from '../assets/plant/plant_A_fruit.png';
 import fruitPath1 from '../assets/plant/plant_B_fruit.png';
@@ -50,13 +51,54 @@ import potPath9 from '../assets/pot/pot9.png';
 export default class Warehouse extends React.Component {
     constructor(props) {
         super(props);
+        this.getFruitTotalNum = this.getFruitTotalNum.bind(this);
+        this.getSeedTotalNum = this.getSeedTotalNum.bind(this);
+        this.getFruitTotalEarn = this.getFruitTotalEarn.bind(this);
+        this.sellAllFruit = this.sellAllFruit.bind(this);
     }
-    render() {
+    getFruitTotalNum() {
+        let ownedFruits = reduxStore.getState().userData.ownedFruits;
+        let total = 0;
+        for (let x of ownedFruits) {
+            total += x;
+        }
+        return total;
+    }
+    getSeedTotalNum() {
         let ownedSeeds = reduxStore.getState().userData.ownedSeeds;
-        let ownedPots = reduxStore.getState().userData.ownedPots;
+        let total = 0;
+        for (let x of ownedSeeds) {
+            total += x;
+        }
+        return total;
+    }
+    getFruitTotalEarn() {
         let ownedFruits = reduxStore.getState().userData.ownedFruits;
         let plantPresets = reduxStore.getState().plantPresets;
-        let potPresets = reduxStore.getState().potPresets;
+        let earn = 0;
+        for (let i = 0; i < ownedFruits.length; i++) {
+            earn += ownedFruits[i] * plantPresets[i].fruitValue;
+        }
+        return earn;
+    }
+    sellAllFruit() {
+        if (this.getFruitTotalNum() === 0) {
+            alert("SEEMS LIKE YOU DON'T HAVE ANY FRUITS IN STOCK.");
+            return;
+        }
+        let confirmation = window.confirm("THIS WILL SELL ALL FRUITS IN STOCK. CONTINUE?");
+        if (confirmation) {
+            let income = this.getFruitTotalEarn();
+            reduxStore.dispatch(changeBalance(income));
+            reduxStore.dispatch(emptyAllFruits());
+        }
+    }
+    render() {
+        let ownedSeeds = reduxStore.getState().userData.ownedSeeds; // array of numbers
+        let ownedPots = reduxStore.getState().userData.ownedPots; // array of numbers
+        let ownedFruits = reduxStore.getState().userData.ownedFruits; // array of numbers
+        let plantPresets = reduxStore.getState().plantPresets; // array of objects
+        let potPresets = reduxStore.getState().potPresets; // array of objects
         let fruitPathObj = {
             fruitPath0,
             fruitPath1,
@@ -108,11 +150,11 @@ export default class Warehouse extends React.Component {
         return (
             <div className="warehouse">
                 <div className="summaryBar">
-                    <button>Sell All Fruits In Stock And Earn $800</button>
+                    <button onClick={this.sellAllFruit}>Sell All Fruits In Stock And Earn ${this.getFruitTotalEarn()}</button>
                 </div>
                 <div className="titleBar">
-                    <div className="leftTitle">Fruits In Stock (325)</div>
-                    <div className="rightTitle">Seeds In Stock (45)</div>
+                    <div className="leftTitle">Fruits In Stock ({this.getFruitTotalNum()})</div>
+                    <div className="rightTitle">Seeds In Stock ({this.getSeedTotalNum()})</div>
                 </div>
                 <div className="placeholder">
                     <ul className="leftHouse">
@@ -121,55 +163,54 @@ export default class Warehouse extends React.Component {
                                 return (
                                     <li key={index}>
                                         <div className="child1">
-                                            <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
+                                            <img alt="" src={fruitPathObj["fruitPath" + index]} />
                                             <div className="count">{item}</div>
                                         </div>
                                         <div className="child2">
-                                            <div>Fruit Name: Guannan Tree's fruit</div>
-                                            <div>Original Name: {plantPresets[index]}'s fruit</div>
-                                            <div>Value Per Unit ($): 10</div>
+                                            <div>Fruit Name: {"to be determined!!"}</div>
+                                            <div>Original Name: {plantPresets[index].name}'s fruit</div>
+                                            <div>Value Per Unit ($): {plantPresets[index].fruitValue}</div>
                                         </div>
                                     </li>
                                 );
                             })
                         }
-                        {/* <li>
-                            <div className="child1">
-                                <img alt="" src={require('../assets/plant/plant_M_fruit.png')} />
-                                <div className="count">350</div>
-                            </div>
-                            <div className="child2">
-                                <div>Fruit Name: Guannan Tree's fruit</div>
-                                <div>Original Name: Plant_A's fruit</div>
-                                <div>Value Per Unit ($): 10</div>
-                            </div>
-                        </li> */}
                     </ul>
                     <ul className="rightHouse">
-                        <li>
-                            <div className="child1">
-                                <img alt="" src={require('../assets/plant/plant_M_seed.png')} />
-                                <div className="count">350</div>
-                            </div>
-                            <div className="child2">
-                                <div>Seed Name: Plant_A's Seed</div>
-                                <div>Life Stage (Seed-Sprout): 10mins</div>
-                                <div>Life Stage (Sprout-Sapling): 10mins</div>
-                                <div>Life Stage (Sapling-Premature): 10mins</div>
-                                <div>Life Stage (Premature-Ripe): 10mins</div>
-                                <div>Fruits Production Cycle: 20mins</div>
-                            </div>
-                        </li>
+                        {
+                            ownedSeeds.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <div className="child1">
+                                            <img alt="" src={seedPathObj["seedPath" + index]} />
+                                            <div className="count">{item}</div>
+                                        </div>
+                                        <div className="child2">
+                                            <div>Seed Name: {plantPresets[index].name}'s Seed</div>
+                                            <div>Life Stage ( {plantPresets[index].lifeStageName[0]}-{plantPresets[index].lifeStageName[1]} ): {plantPresets[index].lifeStageTime[0]} secs</div>
+                                            <div>Life Stage ( {plantPresets[index].lifeStageName[1]}-{plantPresets[index].lifeStageName[2]} ): {plantPresets[index].lifeStageTime[1]} secs</div>
+                                            <div>Life Stage ( {plantPresets[index].lifeStageName[2]}-{plantPresets[index].lifeStageName[3]} ): {plantPresets[index].lifeStageTime[2]} secs</div>
+                                            <div>Life Stage ( {plantPresets[index].lifeStageName[3]}-{plantPresets[index].lifeStageName[4]} ): {plantPresets[index].lifeStageTime[3]} secs</div>
+                                            <div>Fruits Production Cycle: Every {plantPresets[index].lifeStageTime[4]} secs</div>
+                                        </div>
+                                    </li>
+                                );
+                            })
+                        }
                     </ul>
                 </div>
                 <div id="ownedPot">
                     <div className="ownedPotTitle">My Owned Pots</div>
                     <ul>
-                        <li>
-                            <img alt="" src={require('../assets/pot/pot8.png')} />
-                            <div className="ownedPotDesc">Pot 8</div>
-                            <div className="count">350</div>
-                        </li>
+                        {
+                            ownedPots.map((item, index) => (
+                                <li key={index}>
+                                    <img alt="" src={potPathObj["potPath" + index]} />
+                                    <div className="ownedPotDesc">{potPresets[index].name}</div>
+                                    <div className="count">{item}</div>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

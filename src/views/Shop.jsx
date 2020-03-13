@@ -1,24 +1,31 @@
 import React from 'react';
 import '../styles/shop.css';
 import { reduxStore } from '../redux/store.js';
-import { changeBalance } from '../redux/actions.js';
+import {
+    changeBalance,
+    changePaper,
+    changeOwnedSeeds,
+    changeOwnedPots,
+    changeWater,
+    changeLandMax
+} from '../redux/actions.js';
 
-import seedImgPath1 from '../assets/plant/plant_A_seed.png';
-import seedImgPath2 from '../assets/plant/plant_B_seed.png';
-import seedImgPath3 from '../assets/plant/plant_C_seed.png';
-import seedImgPath4 from '../assets/plant/plant_D_seed.png';
-import seedImgPath5 from '../assets/plant/plant_E_seed.png';
-import seedImgPath6 from '../assets/plant/plant_F_seed.png';
-import seedImgPath7 from '../assets/plant/plant_G_seed.png';
-import seedImgPath8 from '../assets/plant/plant_H_seed.png';
-import seedImgPath9 from '../assets/plant/plant_I_seed.png';
-import seedImgPath10 from '../assets/plant/plant_J_seed.png';
-import seedImgPath11 from '../assets/plant/plant_K_seed.png';
-import seedImgPath12 from '../assets/plant/plant_L_seed.png';
-import seedImgPath13 from '../assets/plant/plant_M_seed.png';
-import seedImgPath14 from '../assets/plant/plant_N_seed.png';
-import seedImgPath15 from '../assets/plant/plant_O_seed.png';
-import seedImgPath16 from '../assets/plant/plant_P_seed.png';
+import seedImgPath0 from '../assets/plant/plant_A_seed.png';
+import seedImgPath1 from '../assets/plant/plant_B_seed.png';
+import seedImgPath2 from '../assets/plant/plant_C_seed.png';
+import seedImgPath3 from '../assets/plant/plant_D_seed.png';
+import seedImgPath4 from '../assets/plant/plant_E_seed.png';
+import seedImgPath5 from '../assets/plant/plant_F_seed.png';
+import seedImgPath6 from '../assets/plant/plant_G_seed.png';
+import seedImgPath7 from '../assets/plant/plant_H_seed.png';
+import seedImgPath8 from '../assets/plant/plant_I_seed.png';
+import seedImgPath9 from '../assets/plant/plant_J_seed.png';
+import seedImgPath10 from '../assets/plant/plant_K_seed.png';
+import seedImgPath11 from '../assets/plant/plant_L_seed.png';
+import seedImgPath12 from '../assets/plant/plant_M_seed.png';
+import seedImgPath13 from '../assets/plant/plant_N_seed.png';
+import seedImgPath14 from '../assets/plant/plant_O_seed.png';
+import seedImgPath15 from '../assets/plant/plant_P_seed.png';
 
 import potImgPath0 from '../assets/pot/pot0.png';
 import potImgPath1 from '../assets/pot/pot1.png';
@@ -86,6 +93,20 @@ export default class Shop extends React.Component {
         let confirmation = window.confirm(`CHECK OUT ALL CART ITEMS AND PAY $${total}?`);
         if (confirmation) {
             reduxStore.dispatch(changeBalance(-total));
+            // add the corresponding merchandise to corresponding redux store property
+            reduxStore.dispatch(changeLandMax(this.state.land));
+            reduxStore.dispatch(changeWater(this.state.water));
+            reduxStore.dispatch(changePaper(this.state.paper));
+            let seedsTemp = this.state.shoppingCartSeedArr;
+            let potsTemp = this.state.shoppingCartPotArr;
+            for (let i = 0; i < seedsTemp.length; i++) {
+                reduxStore.dispatch(changeOwnedSeeds(seedsTemp[i], i));
+            }
+            for (let i = 0; i < potsTemp.length; i++) {
+                reduxStore.dispatch(changeOwnedPots(potsTemp[i], i));
+            }
+            // after making adjustment to the redux store user owned products section, set the current
+            // component's local state to initial values.
             this.setState({
                 shoppingCartSeedArr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 shoppingCartPotArr: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -102,7 +123,7 @@ export default class Shop extends React.Component {
     }
     buyWater = () => {
         this.setState({
-            water: this.state.water + 10
+            water: this.state.water + 10 // every time you buy 10 water together
         });
     }
     buyPaper = () => {
@@ -126,6 +147,7 @@ export default class Shop extends React.Component {
     }
     render() {
         let seedImgPathObj = {
+            seedImgPath0,
             seedImgPath1,
             seedImgPath2,
             seedImgPath3,
@@ -140,8 +162,7 @@ export default class Shop extends React.Component {
             seedImgPath12,
             seedImgPath13,
             seedImgPath14,
-            seedImgPath15,
-            seedImgPath16,
+            seedImgPath15
         };
         let potImgPathObj = {
             potImgPath0,

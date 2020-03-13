@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxStore } from '../redux/store.js';
+import '../styles/plantcard.css';
 
 import plant_A_0 from "../assets/plant/plant_A_0.png";
 import plant_A_1 from "../assets/plant/plant_A_1.png";
@@ -81,8 +82,6 @@ import plant_P_1 from "../assets/plant/plant_P_1.png";
 import plant_P_2 from "../assets/plant/plant_P_2.png";
 import plant_P_3 from "../assets/plant/plant_P_3.png";
 import plant_P_4 from "../assets/plant/plant_P_4.png";
-
-import '../styles/plantcard.css';
 
 export default class PlantCard extends React.Component {
     constructor(props) {
@@ -209,4 +208,11 @@ export default class PlantCard extends React.Component {
     }
 }
 
-// react里面竟然不允许常规方式引入 img 的 src，我操你妈的！
+/**
+ * React 中在 <img /> 标签中，src有两种方式写入。第一种就是 src = {}，
+ * 需要用 import 把图片的 ulr 导入，比如 import abc from '../pictures/image.png';
+ * 然后写成 <img src={abc} alt=""> 注意 react 中 alt 的值不需要写值。设定空字符串即可。
+ *
+ * 第二种方式，就是用 require 来处理 src。require的参数 “只允许是纯粹字符串！” 不允许是变量！
+ * 比如写成 <img src={require("./assets/pictures/hello.jpeg")} alt="">
+ */

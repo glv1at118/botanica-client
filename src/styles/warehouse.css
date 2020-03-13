@@ -142,6 +142,11 @@
     box-sizing: border-box;
     padding-top: 7px;
     float: left;
+    line-height: 32px;
+    box-sizing: border-box;
+    border: 3px solid orangered;
+    border-top: none;
+    border-bottom: none;
 }
 
 #ownedPot ul {

@@ -1,58 +1,58 @@
 export const initialState = {
-    potPresets: {
-        pot0: {
+    potPresets: [
+        {
             name: "Plant Pot 0",
             price: 10,
-            imgPath: "../assets/pot/pot0.png"
+            identity: 0
         },
-        pot1: {
+        {
             name: "Plant Pot 1",
             price: 10,
-            imgPath: "../assets/pot/pot1.png"
+            identity: 1
         },
-        pot2: {
+        {
             name: "Plant Pot 2",
             price: 10,
-            imgPath: "../assets/pot/pot2.png"
+            identity: 2
         },
-        pot3: {
+        {
             name: "Plant Pot 3",
             price: 10,
-            imgPath: "../assets/pot/pot3.png"
+            identity: 3
         },
-        pot4: {
+        {
             name: "Plant Pot 4",
             price: 10,
-            imgPath: "../assets/pot/pot4.png"
+            identity: 4
         },
-        pot5: {
+        {
             name: "Plant Pot 5",
             price: 10,
-            imgPath: "../assets/pot/pot5.png"
+            identity: 5
         },
-        pot6: {
+        {
             name: "Plant Pot 6",
             price: 10,
-            imgPath: "../assets/pot/pot6.png"
+            identity: 6
         },
-        pot7: {
+        {
             name: "Plant Pot 7",
             price: 10,
-            imgPath: "../assets/pot/pot7.png"
+            identity: 7
         },
-        pot8: {
+        {
             name: "Plant Pot 8",
             price: 10,
-            imgPath: "../assets/pot/pot8.png"
+            identity: 8
         },
-        pot9: {
+        {
             name: "Plant Pot 9",
             price: 10,
-            imgPath: "../assets/pot/pot9.png"
+            identity: 9
         }
-    },
-    plantPresets: {
-        plantA: {
+    ],
+    plantPresets: [
+        {
             name: "Plant A",
             hydrationMax: 10,
             yieldMax: 20,
@@ -61,17 +61,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_A_0.png",
-                "../assets/plant/plant_A_1.png",
-                "../assets/plant/plant_A_2.png",
-                "../assets/plant/plant_A_3.png",
-                "../assets/plant/plant_A_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_A_fruit.png",
-            seedImg: "../assets/plant/plant_A_seed.png"
+            identity: 0
         },
-        plantB: {
+        {
             name: "Plant B",
             hydrationMax: 10,
             yieldMax: 20,
@@ -80,17 +72,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_B_0.png",
-                "../assets/plant/plant_B_1.png",
-                "../assets/plant/plant_B_2.png",
-                "../assets/plant/plant_B_3.png",
-                "../assets/plant/plant_B_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_B_fruit.png",
-            seedImg: "../assets/plant/plant_B_seed.png"
+            identity: 1
         },
-        plantC: {
+        {
             name: "Plant C",
             hydrationMax: 10,
             yieldMax: 20,
@@ -99,17 +83,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_C_0.png",
-                "../assets/plant/plant_C_1.png",
-                "../assets/plant/plant_C_2.png",
-                "../assets/plant/plant_C_3.png",
-                "../assets/plant/plant_C_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_C_fruit.png",
-            seedImg: "../assets/plant/plant_C_seed.png"
+            identity: 2
         },
-        plantD: {
+        {
             name: "Plant D",
             hydrationMax: 10,
             yieldMax: 20,
@@ -118,17 +94,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_D_0.png",
-                "../assets/plant/plant_D_1.png",
-                "../assets/plant/plant_D_2.png",
-                "../assets/plant/plant_D_3.png",
-                "../assets/plant/plant_D_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_D_fruit.png",
-            seedImg: "../assets/plant/plant_D_seed.png"
+            identity: 3
         },
-        plantE: {
+        {
             name: "Plant E",
             hydrationMax: 10,
             yieldMax: 20,
@@ -137,17 +105,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_E_0.png",
-                "../assets/plant/plant_E_1.png",
-                "../assets/plant/plant_E_2.png",
-                "../assets/plant/plant_E_3.png",
-                "../assets/plant/plant_E_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_E_fruit.png",
-            seedImg: "../assets/plant/plant_E_seed.png"
+            identity: 4
         },
-        plantF: {
+        {
             name: "Plant F",
             hydrationMax: 10,
             yieldMax: 20,
@@ -156,17 +116,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_F_0.png",
-                "../assets/plant/plant_F_1.png",
-                "../assets/plant/plant_F_2.png",
-                "../assets/plant/plant_F_3.png",
-                "../assets/plant/plant_F_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_F_fruit.png",
-            seedImg: "../assets/plant/plant_F_seed.png"
+            identity: 5
         },
-        plantG: {
+        {
             name: "Plant G",
             hydrationMax: 10,
             yieldMax: 20,
@@ -175,17 +127,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_G_0.png",
-                "../assets/plant/plant_G_1.png",
-                "../assets/plant/plant_G_2.png",
-                "../assets/plant/plant_G_3.png",
-                "../assets/plant/plant_G_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_G_fruit.png",
-            seedImg: "../assets/plant/plant_G_seed.png"
+            identity: 6
         },
-        plantH: {
+        {
             name: "Plant H",
             hydrationMax: 10,
             yieldMax: 20,
@@ -194,17 +138,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_H_0.png",
-                "../assets/plant/plant_H_1.png",
-                "../assets/plant/plant_H_2.png",
-                "../assets/plant/plant_H_3.png",
-                "../assets/plant/plant_H_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_H_fruit.png",
-            seedImg: "../assets/plant/plant_H_seed.png"
+            identity: 7
         },
-        plantI: {
+        {
             name: "Plant I",
             hydrationMax: 10,
             yieldMax: 20,
@@ -213,17 +149,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_I_0.png",
-                "../assets/plant/plant_I_1.png",
-                "../assets/plant/plant_I_2.png",
-                "../assets/plant/plant_I_3.png",
-                "../assets/plant/plant_I_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_I_fruit.png",
-            seedImg: "../assets/plant/plant_I_seed.png"
+            identity: 8
         },
-        plantJ: {
+        {
             name: "Plant J",
             hydrationMax: 10,
             yieldMax: 20,
@@ -232,17 +160,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_J_0.png",
-                "../assets/plant/plant_J_1.png",
-                "../assets/plant/plant_J_2.png",
-                "../assets/plant/plant_J_3.png",
-                "../assets/plant/plant_J_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_J_fruit.png",
-            seedImg: "../assets/plant/plant_J_seed.png"
+            identity: 9
         },
-        plantK: {
+        {
             name: "Plant K",
             hydrationMax: 10,
             yieldMax: 20,
@@ -251,17 +171,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_K_0.png",
-                "../assets/plant/plant_K_1.png",
-                "../assets/plant/plant_K_2.png",
-                "../assets/plant/plant_K_3.png",
-                "../assets/plant/plant_K_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_K_fruit.png",
-            seedImg: "../assets/plant/plant_K_seed.png"
+            identity: 10
         },
-        plantL: {
+        {
             name: "Plant L",
             hydrationMax: 10,
             yieldMax: 20,
@@ -270,17 +182,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_L_0.png",
-                "../assets/plant/plant_L_1.png",
-                "../assets/plant/plant_L_2.png",
-                "../assets/plant/plant_L_3.png",
-                "../assets/plant/plant_L_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_L_fruit.png",
-            seedImg: "../assets/plant/plant_L_seed.png"
+            identity: 11
         },
-        plantM: {
+        {
             name: "Plant M",
             hydrationMax: 10,
             yieldMax: 20,
@@ -289,17 +193,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_M_0.png",
-                "../assets/plant/plant_M_1.png",
-                "../assets/plant/plant_M_2.png",
-                "../assets/plant/plant_M_3.png",
-                "../assets/plant/plant_M_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_M_fruit.png",
-            seedImg: "../assets/plant/plant_M_seed.png"
+            identity: 12
         },
-        plantN: {
+        {
             name: "Plant N",
             hydrationMax: 10,
             yieldMax: 20,
@@ -308,17 +204,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_N_0.png",
-                "../assets/plant/plant_N_1.png",
-                "../assets/plant/plant_N_2.png",
-                "../assets/plant/plant_N_3.png",
-                "../assets/plant/plant_N_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_N_fruit.png",
-            seedImg: "../assets/plant/plant_N_seed.png"
+            identity: 13
         },
-        plantO: {
+        {
             name: "Plant O",
             hydrationMax: 10,
             yieldMax: 20,
@@ -327,17 +215,9 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_O_0.png",
-                "../assets/plant/plant_O_1.png",
-                "../assets/plant/plant_O_2.png",
-                "../assets/plant/plant_O_3.png",
-                "../assets/plant/plant_O_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_O_fruit.png",
-            seedImg: "../assets/plant/plant_O_seed.png"
+            identity: 14
         },
-        plantP: {
+        {
             name: "Plant P",
             hydrationMax: 10,
             yieldMax: 20,
@@ -346,98 +226,90 @@ export const initialState = {
             plantValue: 40,
             lifeStageTime: [2, 3, 4, 5, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
-            lifeStageImg: [
-                "../assets/plant/plant_P_0.png",
-                "../assets/plant/plant_P_1.png",
-                "../assets/plant/plant_P_2.png",
-                "../assets/plant/plant_P_3.png",
-                "../assets/plant/plant_P_4.png"
-            ],
-            fruitImg: "../assets/plant/plant_P_fruit.png",
-            seedImg: "../assets/plant/plant_P_seed.png"
+            identity: 15
         }
-    },
+    ],
     shopProducts: {
         seeds: [
             {
                 seedName: "Plant A's Seed",
                 seedPrice: 5,
-                identity: 1
+                identity: 0
             },
             {
                 seedName: "Plant B's Seed",
                 seedPrice: 5,
-                identity: 2
+                identity: 1
             },
             {
                 seedName: "Plant C's Seed",
                 seedPrice: 5,
-                identity: 3
+                identity: 2
             },
             {
                 seedName: "Plant D's Seed",
                 seedPrice: 5,
-                identity: 4
+                identity: 3
             },
             {
                 seedName: "Plant E's Seed",
                 seedPrice: 5,
-                identity: 5
+                identity: 4
             },
             {
                 seedName: "Plant F's Seed",
                 seedPrice: 5,
-                identity: 6
+                identity: 5
             },
             {
                 seedName: "Plant G's Seed",
                 seedPrice: 5,
-                identity: 7
+                identity: 6
             },
             {
                 seedName: "Plant H's Seed",
                 seedPrice: 5,
-                identity: 8
+                identity: 7
             },
             {
                 seedName: "Plant I's Seed",
                 seedPrice: 5,
-                identity: 9
+                identity: 8
             },
             {
                 seedName: "Plant J's Seed",
                 seedPrice: 5,
-                identity: 10
+                identity: 9
             },
             {
                 seedName: "Plant K's Seed",
                 seedPrice: 5,
-                identity: 11
+                identity: 10
             },
             {
                 seedName: "Plant L's Seed",
                 seedPrice: 5,
-                identity: 12
+                identity: 11
             },
             {
                 seedName: "Plant M's Seed",
                 seedPrice: 5,
-                identity: 13
+                identity: 12
             },
             {
                 seedName: "Plant N's Seed",
                 seedPrice: 5,
-                identity: 14
+                identity: 13
             },
             {
                 seedName: "Plant O's Seed",
                 seedPrice: 5,
-                identity: 15
+                identity: 14
             },
             {
                 seedName: "Plant P's Seed",
                 seedPrice: 5,
-                identity: 16
+                identity: 15
             }
         ],
         pots: [
@@ -514,16 +386,23 @@ export const initialState = {
             //     diaryContent: "This is a diary content... This is a diary content... "
             // }
         ],
+
         // [plantA seed count, plantB seed count, ..., plantP seed count]
-        // ownedSeeds: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from purchase
-        ownedSeeds: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15, 0, 5, 6, 9, 9, 1],
+        // 每个元素对应不同种子类别，从 A 到 P。元素的值代表拥有该类别种子的数量。
+        ownedSeeds: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         // [pot0 count, pot1 count, ..., pot9 count]
-        // ownedPots: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from purchase
-        ownedPots: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15],
+        // 每个元素对应不同盆子类别，从 pot0 到 pot9。元素的值代表拥有该类别盆子的数量。
+        ownedPots: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
         // [plantA fruit count, plantB fruit count, ..., plantP fruit count]
-        ownedFruits: [20, 10, 4, 3, 0, 0, 5, 2, 8, 15, 0, 5, 6, 9, 9, 1],
-        // ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // from harvest
-        ownedCoins: 3500,
-        ownedPaper: 4
+        // 每个元素对应不同果实类别，从 A 到 P。元素的值代表拥有该类别果实的数量。
+        ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+        ownedCoins: 900, // The game coins/money that the player owns, can be used to buy things
+        ownedPaper: 0, // The diary paper the player owns, can be used to write diary
+        ownedWater: 0, // The buckets of water the player owns, can be used to water plants
+        ownedLandMax: 5, // defines the total land pieces the user owns, once increased, it will stay
+        usedLand: 1 // defines how many land pieces the user is using, among the total land pieces owned
     }
 };

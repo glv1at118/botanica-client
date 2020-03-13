@@ -25,6 +25,27 @@ function myReducer(previousState = initialState, action) {
         case "CHANGE_PAPER":
             nextState.userData.ownedPaper += action.paperAdjustment;
             return nextState;
+        case "CHANGE_WATER":
+            nextState.userData.ownedWater += action.waterAdjustment;
+            return nextState;
+        case "CHANGE_LAND_MAX":
+            nextState.userData.ownedLandMax += action.landMaxAdjustment;
+            return nextState;
+        case "CHANGE_USED_LAND":
+            nextState.userData.usedLand += action.usedLandAdjustment;
+            return nextState;
+        case "CHANGE_OWNED_SEEDS":
+            nextState.userData.ownedSeeds[action.index] += action.adjustValue;
+            return nextState;
+        case "CHANGE_OWNED_POTS":
+            nextState.userData.ownedPots[action.index] += action.adjustValue;
+            return nextState;
+        case "CHANGE_OWNED_FRUITS":
+            nextState.userData.ownedFruits[action.index] += action.adjustValue;
+            return nextState;
+        case "EMPTY_ALL_FRUITS":
+            nextState.userData.ownedFruits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            return nextState;
         default:
             return previousState;
     }
