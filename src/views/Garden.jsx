@@ -40,17 +40,17 @@ export default class Garden extends React.Component {
                 <StatusBar></StatusBar>
                 <ul className="cards">
                     {
-                        reduxStore.getState().userData.plantList.map((item, index) => {
+                        reduxStore.getState().userData.plantPotList.map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <PlantCard plantName={item.plantName} customName={item.customName} speciality={item.speciality}></PlantCard>
+                                    <PlantCard creatureData={item}></PlantCard>
                                 </li>
                             );
                         })
                     }
                     <li>
                         <div className="addNewPlant">
-                            <img src={require("../assets/misc/add_plant.png")}  alt="" onClick={this.addNewPlant} />
+                            <img src={require("../assets/misc/add_plant.png")} alt="" onClick={this.addNewPlant} />
                         </div>
                     </li>
                 </ul>

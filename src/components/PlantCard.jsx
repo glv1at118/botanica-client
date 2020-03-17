@@ -2,204 +2,242 @@ import React from 'react';
 import { reduxStore } from '../redux/store.js';
 import '../styles/plantcard.css';
 
-import plant_A_0 from "../assets/plant/plant_A_0.png";
-import plant_A_1 from "../assets/plant/plant_A_1.png";
-import plant_A_2 from "../assets/plant/plant_A_2.png";
-import plant_A_3 from "../assets/plant/plant_A_3.png";
-import plant_A_4 from "../assets/plant/plant_A_4.png";
-import plant_B_0 from "../assets/plant/plant_B_0.png";
-import plant_B_1 from "../assets/plant/plant_B_1.png";
-import plant_B_2 from "../assets/plant/plant_B_2.png";
-import plant_B_3 from "../assets/plant/plant_B_3.png";
-import plant_B_4 from "../assets/plant/plant_B_4.png";
-import plant_C_0 from "../assets/plant/plant_C_0.png";
-import plant_C_1 from "../assets/plant/plant_C_1.png";
-import plant_C_2 from "../assets/plant/plant_C_2.png";
-import plant_C_3 from "../assets/plant/plant_C_3.png";
-import plant_C_4 from "../assets/plant/plant_C_4.png";
-import plant_D_0 from "../assets/plant/plant_D_0.png";
-import plant_D_1 from "../assets/plant/plant_D_1.png";
-import plant_D_2 from "../assets/plant/plant_D_2.png";
-import plant_D_3 from "../assets/plant/plant_D_3.png";
-import plant_D_4 from "../assets/plant/plant_D_4.png";
-import plant_E_0 from "../assets/plant/plant_E_0.png";
-import plant_E_1 from "../assets/plant/plant_E_1.png";
-import plant_E_2 from "../assets/plant/plant_E_2.png";
-import plant_E_3 from "../assets/plant/plant_E_3.png";
-import plant_E_4 from "../assets/plant/plant_E_4.png";
-import plant_F_0 from "../assets/plant/plant_F_0.png";
-import plant_F_1 from "../assets/plant/plant_F_1.png";
-import plant_F_2 from "../assets/plant/plant_F_2.png";
-import plant_F_3 from "../assets/plant/plant_F_3.png";
-import plant_F_4 from "../assets/plant/plant_F_4.png";
-import plant_G_0 from "../assets/plant/plant_G_0.png";
-import plant_G_1 from "../assets/plant/plant_G_1.png";
-import plant_G_2 from "../assets/plant/plant_G_2.png";
-import plant_G_3 from "../assets/plant/plant_G_3.png";
-import plant_G_4 from "../assets/plant/plant_G_4.png";
-import plant_H_0 from "../assets/plant/plant_H_0.png";
-import plant_H_1 from "../assets/plant/plant_H_1.png";
-import plant_H_2 from "../assets/plant/plant_H_2.png";
-import plant_H_3 from "../assets/plant/plant_H_3.png";
-import plant_H_4 from "../assets/plant/plant_H_4.png";
-import plant_I_0 from "../assets/plant/plant_I_0.png";
-import plant_I_1 from "../assets/plant/plant_I_1.png";
-import plant_I_2 from "../assets/plant/plant_I_2.png";
-import plant_I_3 from "../assets/plant/plant_I_3.png";
-import plant_I_4 from "../assets/plant/plant_I_4.png";
-import plant_J_0 from "../assets/plant/plant_J_0.png";
-import plant_J_1 from "../assets/plant/plant_J_1.png";
-import plant_J_2 from "../assets/plant/plant_J_2.png";
-import plant_J_3 from "../assets/plant/plant_J_3.png";
-import plant_J_4 from "../assets/plant/plant_J_4.png";
-import plant_K_0 from "../assets/plant/plant_K_0.png";
-import plant_K_1 from "../assets/plant/plant_K_1.png";
-import plant_K_2 from "../assets/plant/plant_K_2.png";
-import plant_K_3 from "../assets/plant/plant_K_3.png";
-import plant_K_4 from "../assets/plant/plant_K_4.png";
-import plant_L_0 from "../assets/plant/plant_L_0.png";
-import plant_L_1 from "../assets/plant/plant_L_1.png";
-import plant_L_2 from "../assets/plant/plant_L_2.png";
-import plant_L_3 from "../assets/plant/plant_L_3.png";
-import plant_L_4 from "../assets/plant/plant_L_4.png";
-import plant_M_0 from "../assets/plant/plant_M_0.png";
-import plant_M_1 from "../assets/plant/plant_M_1.png";
-import plant_M_2 from "../assets/plant/plant_M_2.png";
-import plant_M_3 from "../assets/plant/plant_M_3.png";
-import plant_M_4 from "../assets/plant/plant_M_4.png";
-import plant_N_0 from "../assets/plant/plant_N_0.png";
-import plant_N_1 from "../assets/plant/plant_N_1.png";
-import plant_N_2 from "../assets/plant/plant_N_2.png";
-import plant_N_3 from "../assets/plant/plant_N_3.png";
-import plant_N_4 from "../assets/plant/plant_N_4.png";
-import plant_O_0 from "../assets/plant/plant_O_0.png";
-import plant_O_1 from "../assets/plant/plant_O_1.png";
-import plant_O_2 from "../assets/plant/plant_O_2.png";
-import plant_O_3 from "../assets/plant/plant_O_3.png";
-import plant_O_4 from "../assets/plant/plant_O_4.png";
-import plant_P_0 from "../assets/plant/plant_P_0.png";
-import plant_P_1 from "../assets/plant/plant_P_1.png";
-import plant_P_2 from "../assets/plant/plant_P_2.png";
-import plant_P_3 from "../assets/plant/plant_P_3.png";
-import plant_P_4 from "../assets/plant/plant_P_4.png";
+import plant_0_0 from "../assets/plant/plant_A_0.png";
+import plant_0_1 from "../assets/plant/plant_A_1.png";
+import plant_0_2 from "../assets/plant/plant_A_2.png";
+import plant_0_3 from "../assets/plant/plant_A_3.png";
+import plant_0_4 from "../assets/plant/plant_A_4.png";
+import plant_1_0 from "../assets/plant/plant_B_0.png";
+import plant_1_1 from "../assets/plant/plant_B_1.png";
+import plant_1_2 from "../assets/plant/plant_B_2.png";
+import plant_1_3 from "../assets/plant/plant_B_3.png";
+import plant_1_4 from "../assets/plant/plant_B_4.png";
+import plant_2_0 from "../assets/plant/plant_C_0.png";
+import plant_2_1 from "../assets/plant/plant_C_1.png";
+import plant_2_2 from "../assets/plant/plant_C_2.png";
+import plant_2_3 from "../assets/plant/plant_C_3.png";
+import plant_2_4 from "../assets/plant/plant_C_4.png";
+import plant_3_0 from "../assets/plant/plant_D_0.png";
+import plant_3_1 from "../assets/plant/plant_D_1.png";
+import plant_3_2 from "../assets/plant/plant_D_2.png";
+import plant_3_3 from "../assets/plant/plant_D_3.png";
+import plant_3_4 from "../assets/plant/plant_D_4.png";
+import plant_4_0 from "../assets/plant/plant_E_0.png";
+import plant_4_1 from "../assets/plant/plant_E_1.png";
+import plant_4_2 from "../assets/plant/plant_E_2.png";
+import plant_4_3 from "../assets/plant/plant_E_3.png";
+import plant_4_4 from "../assets/plant/plant_E_4.png";
+import plant_5_0 from "../assets/plant/plant_F_0.png";
+import plant_5_1 from "../assets/plant/plant_F_1.png";
+import plant_5_2 from "../assets/plant/plant_F_2.png";
+import plant_5_3 from "../assets/plant/plant_F_3.png";
+import plant_5_4 from "../assets/plant/plant_F_4.png";
+import plant_6_0 from "../assets/plant/plant_G_0.png";
+import plant_6_1 from "../assets/plant/plant_G_1.png";
+import plant_6_2 from "../assets/plant/plant_G_2.png";
+import plant_6_3 from "../assets/plant/plant_G_3.png";
+import plant_6_4 from "../assets/plant/plant_G_4.png";
+import plant_7_0 from "../assets/plant/plant_H_0.png";
+import plant_7_1 from "../assets/plant/plant_H_1.png";
+import plant_7_2 from "../assets/plant/plant_H_2.png";
+import plant_7_3 from "../assets/plant/plant_H_3.png";
+import plant_7_4 from "../assets/plant/plant_H_4.png";
+import plant_8_0 from "../assets/plant/plant_I_0.png";
+import plant_8_1 from "../assets/plant/plant_I_1.png";
+import plant_8_2 from "../assets/plant/plant_I_2.png";
+import plant_8_3 from "../assets/plant/plant_I_3.png";
+import plant_8_4 from "../assets/plant/plant_I_4.png";
+import plant_9_0 from "../assets/plant/plant_J_0.png";
+import plant_9_1 from "../assets/plant/plant_J_1.png";
+import plant_9_2 from "../assets/plant/plant_J_2.png";
+import plant_9_3 from "../assets/plant/plant_J_3.png";
+import plant_9_4 from "../assets/plant/plant_J_4.png";
+import plant_10_0 from "../assets/plant/plant_K_0.png";
+import plant_10_1 from "../assets/plant/plant_K_1.png";
+import plant_10_2 from "../assets/plant/plant_K_2.png";
+import plant_10_3 from "../assets/plant/plant_K_3.png";
+import plant_10_4 from "../assets/plant/plant_K_4.png";
+import plant_11_0 from "../assets/plant/plant_L_0.png";
+import plant_11_1 from "../assets/plant/plant_L_1.png";
+import plant_11_2 from "../assets/plant/plant_L_2.png";
+import plant_11_3 from "../assets/plant/plant_L_3.png";
+import plant_11_4 from "../assets/plant/plant_L_4.png";
+import plant_12_0 from "../assets/plant/plant_M_0.png";
+import plant_12_1 from "../assets/plant/plant_M_1.png";
+import plant_12_2 from "../assets/plant/plant_M_2.png";
+import plant_12_3 from "../assets/plant/plant_M_3.png";
+import plant_12_4 from "../assets/plant/plant_M_4.png";
+import plant_13_0 from "../assets/plant/plant_N_0.png";
+import plant_13_1 from "../assets/plant/plant_N_1.png";
+import plant_13_2 from "../assets/plant/plant_N_2.png";
+import plant_13_3 from "../assets/plant/plant_N_3.png";
+import plant_13_4 from "../assets/plant/plant_N_4.png";
+import plant_14_0 from "../assets/plant/plant_O_0.png";
+import plant_14_1 from "../assets/plant/plant_O_1.png";
+import plant_14_2 from "../assets/plant/plant_O_2.png";
+import plant_14_3 from "../assets/plant/plant_O_3.png";
+import plant_14_4 from "../assets/plant/plant_O_4.png";
+import plant_15_0 from "../assets/plant/plant_P_0.png";
+import plant_15_1 from "../assets/plant/plant_P_1.png";
+import plant_15_2 from "../assets/plant/plant_P_2.png";
+import plant_15_3 from "../assets/plant/plant_P_3.png";
+import plant_15_4 from "../assets/plant/plant_P_4.png";
+
+import pot_0 from "../assets/pot/pot0.png";
+import pot_1 from "../assets/pot/pot1.png";
+import pot_2 from "../assets/pot/pot2.png";
+import pot_3 from "../assets/pot/pot3.png";
+import pot_4 from "../assets/pot/pot4.png";
+import pot_5 from "../assets/pot/pot5.png";
+import pot_6 from "../assets/pot/pot6.png";
+import pot_7 from "../assets/pot/pot7.png";
+import pot_8 from "../assets/pot/pot8.png";
+import pot_9 from "../assets/pot/pot9.png";
 
 export default class PlantCard extends React.Component {
     constructor(props) {
         super(props);
-        this.retrievePlantPresetInfo = this.retrievePlantPresetInfo.bind(this);
+        this.retrievePlantPotPresets = this.retrievePlantPotPresets.bind(this);
+        this.waterPlant = this.waterPlant.bind(this);
+        this.harvestPlant = this.harvestPlant.bind(this);
+        this.sellPlant = this.sellPlant.bind(this);
     }
-    retrievePlantPresetInfo() {
-        let plantName = "plant" + this.props.plantName.split(" ")[1];
-        let currentPlantPreset = reduxStore.getState().plantPresets[plantName];
-        return currentPlantPreset;
+    retrievePlantPotPresets() {
+        let creatureData = this.props.creatureData;
+        let plantPreset = reduxStore.getState().plantPresets[creatureData.plantIdentity];
+        let potPreset = reduxStore.getState().potPresets[creatureData.potIdentity];
+        return {
+            plantPreset: plantPreset,
+            potPreset: potPreset
+        };
+    }
+    waterPlant() {
+
+    }
+    harvestPlant() {
+
+    }
+    sellPlant() {
+
     }
     render() {
         let plantImgPathObj = {
-            "plant_A_0": plant_A_0,
-            "plant_A_1": plant_A_1,
-            "plant_A_2": plant_A_2,
-            "plant_A_3": plant_A_3,
-            "plant_A_4": plant_A_4,
-            "plant_B_0": plant_B_0,
-            "plant_B_1": plant_B_1,
-            "plant_B_2": plant_B_2,
-            "plant_B_3": plant_B_3,
-            "plant_B_4": plant_B_4,
-            "plant_C_0": plant_C_0,
-            "plant_C_1": plant_C_1,
-            "plant_C_2": plant_C_2,
-            "plant_C_3": plant_C_3,
-            "plant_C_4": plant_C_4,
-            "plant_D_0": plant_D_0,
-            "plant_D_1": plant_D_1,
-            "plant_D_2": plant_D_2,
-            "plant_D_3": plant_D_3,
-            "plant_D_4": plant_D_4,
-            "plant_E_0": plant_E_0,
-            "plant_E_1": plant_E_1,
-            "plant_E_2": plant_E_2,
-            "plant_E_3": plant_E_3,
-            "plant_E_4": plant_E_4,
-            "plant_F_0": plant_F_0,
-            "plant_F_1": plant_F_1,
-            "plant_F_2": plant_F_2,
-            "plant_F_3": plant_F_3,
-            "plant_F_4": plant_F_4,
-            "plant_G_0": plant_G_0,
-            "plant_G_1": plant_G_1,
-            "plant_G_2": plant_G_2,
-            "plant_G_3": plant_G_3,
-            "plant_G_4": plant_G_4,
-            "plant_H_0": plant_H_0,
-            "plant_H_1": plant_H_1,
-            "plant_H_2": plant_H_2,
-            "plant_H_3": plant_H_3,
-            "plant_H_4": plant_H_4,
-            "plant_I_0": plant_I_0,
-            "plant_I_1": plant_I_1,
-            "plant_I_2": plant_I_2,
-            "plant_I_3": plant_I_3,
-            "plant_I_4": plant_I_4,
-            "plant_J_0": plant_J_0,
-            "plant_J_1": plant_J_1,
-            "plant_J_2": plant_J_2,
-            "plant_J_3": plant_J_3,
-            "plant_J_4": plant_J_4,
-            "plant_K_0": plant_K_0,
-            "plant_K_1": plant_K_1,
-            "plant_K_2": plant_K_2,
-            "plant_K_3": plant_K_3,
-            "plant_K_4": plant_K_4,
-            "plant_L_0": plant_L_0,
-            "plant_L_1": plant_L_1,
-            "plant_L_2": plant_L_2,
-            "plant_L_3": plant_L_3,
-            "plant_L_4": plant_L_4,
-            "plant_M_0": plant_M_0,
-            "plant_M_1": plant_M_1,
-            "plant_M_2": plant_M_2,
-            "plant_M_3": plant_M_3,
-            "plant_M_4": plant_M_4,
-            "plant_N_0": plant_N_0,
-            "plant_N_1": plant_N_1,
-            "plant_N_2": plant_N_2,
-            "plant_N_3": plant_N_3,
-            "plant_N_4": plant_N_4,
-            "plant_O_0": plant_O_0,
-            "plant_O_1": plant_O_1,
-            "plant_O_2": plant_O_2,
-            "plant_O_3": plant_O_3,
-            "plant_O_4": plant_O_4,
-            "plant_P_0": plant_P_0,
-            "plant_P_1": plant_P_1,
-            "plant_P_2": plant_P_2,
-            "plant_P_3": plant_P_3,
-            "plant_P_4": plant_P_4
+            plant_0_0,
+            plant_0_1,
+            plant_0_2,
+            plant_0_3,
+            plant_0_4,
+            plant_1_0,
+            plant_1_1,
+            plant_1_2,
+            plant_1_3,
+            plant_1_4,
+            plant_2_0,
+            plant_2_1,
+            plant_2_2,
+            plant_2_3,
+            plant_2_4,
+            plant_3_0,
+            plant_3_1,
+            plant_3_2,
+            plant_3_3,
+            plant_3_4,
+            plant_4_0,
+            plant_4_1,
+            plant_4_2,
+            plant_4_3,
+            plant_4_4,
+            plant_5_0,
+            plant_5_1,
+            plant_5_2,
+            plant_5_3,
+            plant_5_4,
+            plant_6_0,
+            plant_6_1,
+            plant_6_2,
+            plant_6_3,
+            plant_6_4,
+            plant_7_0,
+            plant_7_1,
+            plant_7_2,
+            plant_7_3,
+            plant_7_4,
+            plant_8_0,
+            plant_8_1,
+            plant_8_2,
+            plant_8_3,
+            plant_8_4,
+            plant_9_0,
+            plant_9_1,
+            plant_9_2,
+            plant_9_3,
+            plant_9_4,
+            plant_10_0,
+            plant_10_1,
+            plant_10_2,
+            plant_10_3,
+            plant_10_4,
+            plant_11_0,
+            plant_11_1,
+            plant_11_2,
+            plant_11_3,
+            plant_11_4,
+            plant_12_0,
+            plant_12_1,
+            plant_12_2,
+            plant_12_3,
+            plant_12_4,
+            plant_13_0,
+            plant_13_1,
+            plant_13_2,
+            plant_13_3,
+            plant_13_4,
+            plant_14_0,
+            plant_14_1,
+            plant_14_2,
+            plant_14_3,
+            plant_14_4,
+            plant_15_0,
+            plant_15_1,
+            plant_15_2,
+            plant_15_3,
+            plant_15_4
         };
-        let result = this.retrievePlantPresetInfo();
-        let plantCategory = result.name.split(" ")[1];
-        let imgPath = "plant_" + plantCategory + "_1";
-        let imgSrc = plantImgPathObj[imgPath];
+        let potImgPathObj = {
+            pot_0,
+            pot_1,
+            pot_2,
+            pot_3,
+            pot_4,
+            pot_5,
+            pot_6,
+            pot_7,
+            pot_8,
+            pot_9
+        };
+        let presetsObj = this.retrievePlantPotPresets();
+        let currentPlantImgPath = plantImgPathObj["plant_" + this.props.creatureData.plantIdentity + "_" + this.props.creatureData.lifeStagePointer];
+        let currentPotImgPath = potImgPathObj["pot_" + this.props.creatureData.potIdentity];
         return (
             <div className="plantcard">
                 <div className="plantInfo">
-                    <div className="textInfo"><b><u>{this.props.customName}</u></b></div>
-                    <div className="textInfo"><b>Current:</b> {result.lifeStageName[1]}</div>
-                    <div className="textInfo"><b>Next Stage:</b> {result.lifeStageTime[1]}</div>
-                    <div className="textInfo"><b>Value:</b> {result.plantValue}</div>
-                    <div className="textInfo"><b>Speciality:</b> {this.props.speciality}</div>
-                    <div className="textInfo"><b>Hydration:</b> 10/{result.hydrationMax}</div>
-                    <div className="textInfo"><b>Yield:</b> 35/{result.yieldMax}</div>
-                    <button className="operateBtn water"><b>Water</b></button><br />
-                    <button className="operateBtn harvest"><b>Harvest</b></button><br />
-                    <button className="operateBtn sell"><b>Sell</b></button><br />
+                    <div className="textInfo"><b><u>{this.props.creatureData.customName}</u></b></div>
+                    <div className="textInfo"><b>Current:</b> {presetsObj.plantPreset.lifeStageName[this.props.creatureData.lifeStagePointer]}</div>
+                    <div className="textInfo"><b>Next Stage:</b> {presetsObj.plantPreset.lifeStageTime[this.props.creatureData.lifeStagePointer] - this.props.creatureData.growingTime}</div>
+                    <div className="textInfo"><b>Value:</b> {presetsObj.plantPreset.plantValue + presetsObj.potPreset.price}</div>
+                    <div className="textInfo"><b>Speciality:</b> {this.props.creatureData.speciality}</div>
+                    <div className="textInfo"><b>Hydration:</b> 10/{presetsObj.plantPreset.hydrationMax}</div>
+                    <div className="textInfo"><b>Yield:</b> 35/{presetsObj.plantPreset.yieldMax}</div>
+                    <button className="operateBtn water" onClick={this.waterPlant}><b>Water</b></button><br />
+                    <button className="operateBtn harvest" onClick={this.harvestPlant}><b>Harvest</b></button><br />
+                    <button className="operateBtn sell" onClick={this.sellPlant}><b>Sell</b></button><br />
                 </div>
                 <div className="plantImg">
                     <div className="plantBody">
-                        <img src={imgSrc} alt="" />
+                        <img src={currentPlantImgPath} alt="" />
                     </div>
                     <div className="plantPot">
-                        <img src={require("../assets/pot/pot2.png")} alt="" />
+                        <img src={currentPotImgPath} alt="" />
                     </div>
                 </div>
             </div>
