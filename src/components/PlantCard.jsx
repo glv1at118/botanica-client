@@ -14,6 +14,7 @@ import {
     changeOwnedFruits
 } from '../redux/actions.js';
 import '../styles/plantcard.css';
+import axios from 'axios';
 
 import plant_0_0 from "../assets/plant/plant_A_0.png";
 import plant_0_1 from "../assets/plant/plant_A_1.png";
@@ -114,7 +115,13 @@ export default class PlantCard extends React.Component {
             currentPlantImgPath: undefined,
             growingTimer: -1,
             waterTimer: -1,
-            yieldTimer: -1
+            yieldTimer: -1,
+            conversationTimer: -1,
+            popUpTimer: -1,
+            message: "LOADING......",
+            visibilityObj: {
+                visibility: "hidden"
+            }
         };
         this.retrievePlantPotPresets = this.retrievePlantPotPresets.bind(this);
         this.waterPlant = this.waterPlant.bind(this);
@@ -124,6 +131,9 @@ export default class PlantCard extends React.Component {
         this.stageGrowingTimeRunner = this.stageGrowingTimeRunner.bind(this);
         this.waterConsumptionRunner = this.waterConsumptionRunner.bind(this);
         this.yieldRunner = this.yieldRunner.bind(this);
+        this.updateMessageRunner = this.updateMessageRunner.bind(this);
+        this.popUpDialogRunner = this.popUpDialogRunner.bind(this);
+        this.closePopUpDialog = this.closePopUpDialog.bind(this);
     }
     componentDidMount() {
         // Upon component mount, set the plant's image path
@@ -131,11 +141,15 @@ export default class PlantCard extends React.Component {
         this.stageGrowingTimeRunner();
         this.waterConsumptionRunner();
         this.yieldRunner();
+        this.updateMessageRunner();
+        this.popUpDialogRunner();
     }
     componentWillUnmount() {
         clearInterval(this.state.growingTimer);
         clearInterval(this.state.waterTimer);
         clearInterval(this.state.yieldTimer);
+        clearInterval(this.state.conversationTimer);
+        clearInterval(this.state.popUpTimer);
     }
     stageGrowingTimeRunner() {
         let timer = setInterval(() => {
@@ -319,6 +333,101 @@ export default class PlantCard extends React.Component {
             reduxStore.dispatch(changeBalance(earn));
         }
     }
+    updateMessageRunner() {
+        let timer;
+        // these strings must be used for special abilities strings
+        if (this.props.creatureData.speciality === "chat") {
+            // special ability is chatting, retrieving pre-stored chat messages in redux store
+            timer = setInterval(() => {
+                let greetingsPresetsArr = reduxStore.getState().greetingsPresets;
+                let length = greetingsPresetsArr.length;
+                let random = Math.floor(Math.random() * length);
+                this.setState({
+                    message: greetingsPresetsArr[random]
+                });
+            }, 5000);
+        } else if (this.props.creatureData.speciality === "news") {
+            // special ability is showing the world latest news
+            let url = 'http://newsapi.org/v2/top-headlines?country=us&' + 'apiKey=2d8632aa8766423bb537fd74092883c8';
+            timer = setInterval(() => {
+                axios.get(url).then((response) => {
+                    let articleArr = response.data.articles;
+                    let randomPick = Math.floor(Math.random() * articleArr.length);
+                    let chosenArticle = articleArr[randomPick];
+                    let retrievedMsg = chosenArticle.title + ", " + chosenArticle.publishedAt + ", " + chosenArticle.source.name + ", " + chosenArticle.description;
+                    this.setState({
+                        message: retrievedMsg
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }, 5000);
+        } else if (this.props.creatureData.speciality === "weather") {
+            // special ability is to show the weather at a location
+            let url = "http://api.openweathermap.org/data/2.5/forecast?id=6167865&" + "appid=0896d1641a623758aa32f46a077d07aa";
+            timer = setInterval(() => {
+                axios.get(url).then((response) => {
+                    let foreCastArr = response.data.list;
+                    let cityName = response.data.city.name;
+                    let weatherCondition = foreCastArr[3].weather[0].description;
+                    let foreCastTime = foreCastArr[3].dt_txt;
+                    let temperature = Math.floor(foreCastArr[3].main.temp - 273.15);
+                    let feelsLikeTemp = Math.floor(foreCastArr[3].main.feels_like - 273.15);
+                    let humidity = foreCastArr[3].main.humidity;
+                    let weatherString = cityName + ", " + foreCastTime + ", Weather Condition: " + weatherCondition + ", Temperature(c): " + temperature + ", Feels Like(c): " + feelsLikeTemp + ", Humidity: " + humidity;
+                    this.setState({
+                        message: weatherString
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }, 5000);
+        } else if (this.props.creatureData.speciality === "joke") {
+            // special ability is to tell some programmer's jokes
+            let url = "https://official-joke-api.appspot.com/jokes/random";
+            timer = setInterval(() => {
+                axios.get(url).then((response) => {
+                    let setup = response.data.setup;
+                    let punchline = response.data.punchline;
+                    let combined = setup + " " + punchline;
+                    this.setState({
+                        message: combined
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }, 5000);
+        }
+        this.setState({
+            conversationTimer: timer
+        });
+    }
+    popUpDialogRunner() {
+        let timer = setInterval(() => {
+            this.setState({
+                visibilityObj: {
+                    visibility: "visible"
+                }
+            });
+            setTimeout(() => {
+                this.setState({
+                    visibilityObj: {
+                        visibility: "hidden"
+                    }
+                });
+            }, 3000);
+        }, 10000);
+        this.setState({
+            popUpTimer: timer
+        });
+    }
+    closePopUpDialog() {
+        this.setState({
+            visibilityObj: {
+                visibility: "hidden"
+            }
+        });
+    }
     render() {
         let potImgPathObj = {
             pot_0,
@@ -356,12 +465,7 @@ export default class PlantCard extends React.Component {
                         <img src={currentPotImgPath} alt="" />
                     </div>
                 </div>
-                {/*
-                <div className="msgPopUp">
-                    this is a simple message
-                </div>
-                {/* <div className="msgPopUpTriangle"></div> 绑定一个点击关闭对话窗事件 */}
-                */}
+                <div className="msgPopUp" onClick={this.closePopUpDialog} style={this.state.visibilityObj}>{this.state.message}</div>
             </div>
         );
 

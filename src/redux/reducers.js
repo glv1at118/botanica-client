@@ -31,9 +31,6 @@ function myReducer(previousState = initialState, action) {
         case "CHANGE_LAND_MAX":
             nextState.userData.ownedLandMax += action.landMaxAdjustment;
             return nextState;
-        case "CHANGE_USED_LAND":
-            nextState.userData.usedLand += action.usedLandAdjustment;
-            return nextState;
         case "CHANGE_OWNED_SEEDS":
             nextState.userData.ownedSeeds[action.index] += action.adjustValue;
             return nextState;

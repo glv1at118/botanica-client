@@ -54,7 +54,7 @@ export const initialState = {
     plantPresets: [
         {
             name: "Plant A",
-            hydrationMax: 20,
+            hydrationMax: 99,
             yieldMax: 20,
             seedPrice: 5,
             fruitValue: 1,
@@ -371,7 +371,7 @@ export const initialState = {
     greetingsPresets: [
         "HI! HOW ARE YOU TODAY?",
         "I LIKE YOU, DO YOU LIKE ME?",
-        "WHAT IS BOTANICA? BOTANICA IS BOTANICA!",
+        "WHAT IS BOTANICA? BOTANICA IS THIS EPIC BOTANICA I AM LIVING IN!",
         "DON'T FORGET TO WATER ME OFTEN :)",
         "ONCE I AM FULLY GROWN, I CAN PRODUCE FRUITS!",
         "HAVE YOU LEARNT ANYTHING NEW TODAY?",
@@ -395,37 +395,34 @@ export const initialState = {
         "IF YOU BUY A NEW SEED, IT MAY COME WITH A SPECIAL ABILITY!",
         "I LOVE THIS FLOWER POT SO MUCH.",
         "Zzzz...... Zzzz......",
-        "(✿◡‿◡)",
+        "(✿◡‿◡) THANK YOU :)",
         "(o゜▽゜)o☆ BIU BIU BIU ~~",
-        "(。・∀・)ノ",
-        "(✿◕‿◕✿)",
+        "(。・∀・)ノ HI~~ DON'T FORGET TO HARVEST FRUITS~~",
+        "(✿◕‿◕✿) THE ART OF THINKING LOGICALLY AND PHILOSOPHICALLY...",
         "(⊙_⊙)？WHAT ARE YOU DOING?",
-        "╰(*°▽°*)╯",
-        "ヾ(＠⌒ー⌒＠)ノ",
-        "(●'◡'●) HI~",
-        "(๑•̀ㅂ•́)و✧"
+        "╰(*°▽°*)╯ WOW THIS IS GREAT!",
+        "ヾ(＠⌒ー⌒＠)ノ HAPPINESS IS THE INHERENT THING FLOWING OUT OF YOUR HEART.",
+        "(●'◡'●) HI~ AM I LOVELY?",
+        "(๑•̀ㅂ•́)و✧ I WISH YOU ALL THE BEST!"
     ],
     userData: {
-        // currently, there are 4 types of special ability owned by the plant creatures
-        // COVID-19 tracking; World News; World Weathers; Jokes for Programmers;
-        // special ability identifier strings: 
-        // "Pandemic Report", "World News", "Weather Forecast", "Programmer Jokes"
-        // a plant creature may or may not own a special ability, as this is randomly decided;
-        // but all plants own a basic ability which is the "greeting words";
+        // upon creating a new plant, it will randomly get one of the following 4 special abilities:
+        // special ability identifier strings(case sensitive): 
+        // "chat", "news", "weather", "joke"
         plantPotList: [
             {
                 potIdentity: 0, // used to locate pot category in the pot presets and retrieve data
                 plantIdentity: 0, // used to locate plant category in the plant presets and retrieve data
                 positionAtCurrentArray: 0, // this is used to locate the current object in the plantPotList
                 customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
+                speciality: "chat",
                 apiUrl: "",
                 // an index number dictating the current life stage, 0 means seed stage
                 lifeStagePointer: 0,
                 // the time elapsed at the current life stage, once it reaches the corresponding
                 // life stage time needed for next stage, the plant will proceed to next stage
                 growingTime: 0,
-                currentHydration: 5,
+                currentHydration: 99,
                 currentYield: 5
             },
             // {
@@ -542,6 +539,5 @@ export const initialState = {
         ownedPaper: 0, // The diary paper the player owns, can be used to write diary
         ownedWater: 100, // The buckets of water the player owns, can be used to water plants
         ownedLandMax: 5, // defines the total land pieces the user owns, once increased, it will stay
-        usedLand: 1 // defines how many land pieces the user is using, among the total land pieces owned
     }
 };

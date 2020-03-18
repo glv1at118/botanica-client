@@ -46,13 +46,6 @@ function changeLandMax(landMaxAdjustment) {
     };
 }
 
-function changeUsedLand(usedLandAdjustment) {
-    return {
-        type: "CHANGE_USED_LAND",
-        usedLandAdjustment
-    };
-}
-
 function changeOwnedSeeds(adjustValue, index) {
     return {
         type: "CHANGE_OWNED_SEEDS",
@@ -140,4 +133,4 @@ function clearCurrYield(ownedPlantId) {
     };
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, changeUsedLand, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield };
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield };
