@@ -83,4 +83,61 @@ function emptyAllFruits() {
     };
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, changeUsedLand };
+function increaseGrowingTime(ownedPlantId) {
+    return {
+        type: "INCREASE_GROWING_TIME",
+        ownedPlantId: ownedPlantId
+    };
+}
+
+function resetGrowingTime(ownedPlantId) {
+    return {
+        type: "RESET_GROWING_TIME",
+        ownedPlantId: ownedPlantId
+    };
+}
+
+function increaseLifeStagePointer(ownedPlantId) {
+    return {
+        type: "INCREASE_LIFE_STAGE_POINTER",
+        ownedPlantId: ownedPlantId
+    }
+}
+
+function decreaseHydration(ownedPlantId) {
+    return {
+        type: "DECREASE_HYDRATION",
+        ownedPlantId
+    };
+}
+
+function increaseHydration(hydrationAmount, ownedPlantId) {
+    return {
+        type: "INCREASE_HYDRATION",
+        hydrationAmount,
+        ownedPlantId
+    };
+}
+
+function removePlant(ownedPlantId) {
+    return {
+        type: "REMOVE_PLANT",
+        ownedPlantId: ownedPlantId
+    };
+}
+
+function increaseCurrYield(ownedPlantId) {
+    return {
+        type: "INCREASE_CURR_YIELD",
+        ownedPlantId: ownedPlantId
+    };
+}
+
+function clearCurrYield(ownedPlantId) {
+    return {
+        type: "CLEAR_CURR_YIELD",
+        ownedPlantId: ownedPlantId
+    };
+}
+
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, changeUsedLand, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield };

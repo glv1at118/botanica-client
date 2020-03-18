@@ -46,6 +46,38 @@ function myReducer(previousState = initialState, action) {
         case "EMPTY_ALL_FRUITS":
             nextState.userData.ownedFruits = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             return nextState;
+        case "INCREASE_GROWING_TIME":
+            nextState.userData.plantPotList[action.ownedPlantId].growingTime++;
+            return nextState;
+        case "RESET_GROWING_TIME":
+            nextState.userData.plantPotList[action.ownedPlantId].growingTime = 0;
+            return nextState;
+        case "INCREASE_LIFE_STAGE_POINTER":
+            if (nextState.userData.plantPotList[action.ownedPlantId].lifeStagePointer >= 4) {
+                return nextState;
+            }
+            nextState.userData.plantPotList[action.ownedPlantId].lifeStagePointer++;
+            return nextState;
+        case "DECREASE_HYDRATION":
+            if (nextState.userData.plantPotList[action.ownedPlantId].currentHydration <= 0) {
+                nextState.userData.plantPotList[action.ownedPlantId].currentHydration = 0;
+                return nextState;
+            } else {
+                nextState.userData.plantPotList[action.ownedPlantId].currentHydration--;
+                return nextState;
+            }
+        case "INCREASE_HYDRATION":
+            nextState.userData.plantPotList[action.ownedPlantId].currentHydration += action.hydrationAmount;
+            return nextState;
+        case "REMOVE_PLANT":
+            nextState.userData.plantPotList.splice(action.ownedPlantId, 1);
+            return nextState;
+        case "INCREASE_CURR_YIELD":
+            nextState.userData.plantPotList[action.ownedPlantId].currentYield++;
+            return nextState;
+        case "CLEAR_CURR_YIELD":
+            nextState.userData.plantPotList[action.ownedPlantId].currentYield = 0;
+            return nextState;
         default:
             return previousState;
     }

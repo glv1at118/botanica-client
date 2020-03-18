@@ -1,5 +1,18 @@
 import React from 'react';
 import { reduxStore } from '../redux/store.js';
+import {
+    increaseGrowingTime,
+    resetGrowingTime,
+    increaseLifeStagePointer,
+    decreaseHydration,
+    increaseHydration,
+    changeWater,
+    removePlant,
+    changeBalance,
+    increaseCurrYield,
+    clearCurrYield,
+    changeOwnedFruits
+} from '../redux/actions.js';
 import '../styles/plantcard.css';
 
 import plant_0_0 from "../assets/plant/plant_A_0.png";
@@ -97,30 +110,85 @@ import pot_9 from "../assets/pot/pot9.png";
 export default class PlantCard extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentPlantImgPath: undefined,
+            growingTimer: -1,
+            waterTimer: -1,
+            yieldTimer: -1
+        };
         this.retrievePlantPotPresets = this.retrievePlantPotPresets.bind(this);
         this.waterPlant = this.waterPlant.bind(this);
         this.harvestPlant = this.harvestPlant.bind(this);
         this.sellPlant = this.sellPlant.bind(this);
+        this.resetPlantImgPath = this.resetPlantImgPath.bind(this);
+        this.stageGrowingTimeRunner = this.stageGrowingTimeRunner.bind(this);
+        this.waterConsumptionRunner = this.waterConsumptionRunner.bind(this);
+        this.yieldRunner = this.yieldRunner.bind(this);
     }
-    retrievePlantPotPresets() {
+    componentDidMount() {
+        // Upon component mount, set the plant's image path
+        this.resetPlantImgPath();
+        this.stageGrowingTimeRunner();
+        this.waterConsumptionRunner();
+        this.yieldRunner();
+    }
+    componentWillUnmount() {
+        clearInterval(this.state.growingTimer);
+        clearInterval(this.state.waterTimer);
+        clearInterval(this.state.yieldTimer);
+    }
+    stageGrowingTimeRunner() {
+        let timer = setInterval(() => {
+            let tmp1 = reduxStore.getState().userData.plantPotList[this.props.creatureData.positionAtCurrentArray].growingTime;
+            let tmp2 = reduxStore.getState().plantPresets[this.props.creatureData.plantIdentity].lifeStageTime[this.props.creatureData.lifeStagePointer];
+            if (tmp1 >= tmp2) {
+                // 此阶段生长时间达到需要的生长时间，升级到下一阶段。
+                reduxStore.dispatch(resetGrowingTime(this.props.creatureData.positionAtCurrentArray));
+                reduxStore.dispatch(increaseLifeStagePointer(this.props.creatureData.positionAtCurrentArray));
+                // 因为生长升级到下一个阶段了，所以图片需要更新。
+                this.resetPlantImgPath();
+            } else {
+                // 此阶段尚未达到需要的生长时间，继续生长。（植物图片不需要更新）
+                reduxStore.dispatch(increaseGrowingTime(this.props.creatureData.positionAtCurrentArray));
+            }
+        }, 1000);
+        this.setState({
+            growingTimer: timer
+        });
+    }
+    waterConsumptionRunner() {
+        let timer = setInterval(() => {
+            reduxStore.dispatch(decreaseHydration(this.props.creatureData.positionAtCurrentArray));
+            // if the hydration level of the current plant reaches 0, then the plant "dies", remove it
+            if (this.props.creatureData.currentHydration <= 0) {
+                reduxStore.dispatch(removePlant(this.props.creatureData.positionAtCurrentArray));
+                // 植物移除之后，自然和它相关的所有计时器都没有了意义，一并移除
+                clearInterval(this.state.growingTimer);
+                clearInterval(this.state.waterTimer);
+            }
+        }, 10000);
+        this.setState({
+            waterTimer: timer
+        });
+    }
+    yieldRunner() {
         let creatureData = this.props.creatureData;
         let plantPreset = reduxStore.getState().plantPresets[creatureData.plantIdentity];
-        let potPreset = reduxStore.getState().potPresets[creatureData.potIdentity];
-        return {
-            plantPreset: plantPreset,
-            potPreset: potPreset
-        };
+        let produceCycle = plantPreset.lifeStageTime[4] * 1000;
+        let timer = setInterval(() => {
+            if (this.props.creatureData.lifeStagePointer >= 4) {
+                // the plant is mature because it reaches the final life stage, produce fruit recurrently
+                if (this.props.creatureData.currentYield < plantPreset.yieldMax) {
+                    // the current yield is less than the max yield limit, then produce fruit
+                    reduxStore.dispatch(increaseCurrYield(this.props.creatureData.positionAtCurrentArray));
+                }
+            }
+        }, produceCycle);
+        this.setState({
+            yieldTimer: timer
+        });
     }
-    waterPlant() {
-
-    }
-    harvestPlant() {
-
-    }
-    sellPlant() {
-
-    }
-    render() {
+    resetPlantImgPath() {
         let plantImgPathObj = {
             plant_0_0,
             plant_0_1,
@@ -203,6 +271,55 @@ export default class PlantCard extends React.Component {
             plant_15_3,
             plant_15_4
         };
+        let currentPlantImgPath = plantImgPathObj["plant_" + this.props.creatureData.plantIdentity + "_" + this.props.creatureData.lifeStagePointer];
+        this.setState({
+            currentPlantImgPath: currentPlantImgPath
+        });
+    }
+    retrievePlantPotPresets() {
+        let creatureData = this.props.creatureData;
+        let plantPreset = reduxStore.getState().plantPresets[creatureData.plantIdentity];
+        let potPreset = reduxStore.getState().potPresets[creatureData.potIdentity];
+        return {
+            plantPreset: plantPreset,
+            potPreset: potPreset
+        };
+    }
+    waterPlant() {
+        let currentHydrationLevel = this.props.creatureData.currentHydration;
+        let maxHydrationLevel = reduxStore.getState().plantPresets[this.props.creatureData.plantIdentity].hydrationMax;
+        let bucketsOfWater = reduxStore.getState().userData.ownedWater;
+        if (maxHydrationLevel - currentHydrationLevel <= bucketsOfWater) {
+            // 消耗一部分用户拥有的水量
+            reduxStore.dispatch(changeWater(currentHydrationLevel - maxHydrationLevel));
+            // 为当前植物增加目前含有的水量
+            reduxStore.dispatch(increaseHydration(maxHydrationLevel - currentHydrationLevel, this.props.creatureData.positionAtCurrentArray));
+        } else {
+            // 植物从当前含水量到满水量所需求的水量，大于用户拥有的总共水量，那么浇用户拥有的总共水量
+            reduxStore.dispatch(changeWater(-bucketsOfWater));
+            reduxStore.dispatch(increaseHydration(bucketsOfWater, this.props.creatureData.positionAtCurrentArray));
+        }
+    }
+    harvestPlant() {
+        let harvestAmount = this.props.creatureData.currentYield;
+        let plantCategory = this.props.creatureData.plantIdentity;
+        reduxStore.dispatch(changeOwnedFruits(harvestAmount, plantCategory));
+        reduxStore.dispatch(clearCurrYield(this.props.creatureData.positionAtCurrentArray));
+    }
+    sellPlant() {
+        let confirmation = window.confirm("ARE YOU SURE TO SELL THIS PLANT?");
+        if (confirmation) {
+            reduxStore.dispatch(removePlant(this.props.creatureData.positionAtCurrentArray));
+            // 植物移除之后，自然和它相关的所有计时器都没有了意义，一并移除
+            clearInterval(this.state.growingTimer);
+            clearInterval(this.state.waterTimer);
+            // 把收益添加到用户账户
+            let presetsObj = this.retrievePlantPotPresets();
+            let earn = presetsObj.plantPreset.plantValue + presetsObj.potPreset.price;
+            reduxStore.dispatch(changeBalance(earn));
+        }
+    }
+    render() {
         let potImgPathObj = {
             pot_0,
             pot_1,
@@ -216,7 +333,6 @@ export default class PlantCard extends React.Component {
             pot_9
         };
         let presetsObj = this.retrievePlantPotPresets();
-        let currentPlantImgPath = plantImgPathObj["plant_" + this.props.creatureData.plantIdentity + "_" + this.props.creatureData.lifeStagePointer];
         let currentPotImgPath = potImgPathObj["pot_" + this.props.creatureData.potIdentity];
         return (
             <div className="plantcard">
@@ -226,20 +342,26 @@ export default class PlantCard extends React.Component {
                     <div className="textInfo"><b>Next Stage:</b> {presetsObj.plantPreset.lifeStageTime[this.props.creatureData.lifeStagePointer] - this.props.creatureData.growingTime}</div>
                     <div className="textInfo"><b>Value:</b> {presetsObj.plantPreset.plantValue + presetsObj.potPreset.price}</div>
                     <div className="textInfo"><b>Speciality:</b> {this.props.creatureData.speciality}</div>
-                    <div className="textInfo"><b>Hydration:</b> 10/{presetsObj.plantPreset.hydrationMax}</div>
-                    <div className="textInfo"><b>Yield:</b> 35/{presetsObj.plantPreset.yieldMax}</div>
+                    <div className="textInfo"><b>Hydration:</b> {this.props.creatureData.currentHydration}/{presetsObj.plantPreset.hydrationMax}</div>
+                    <div className="textInfo"><b>Yield:</b> {this.props.creatureData.currentYield}/{presetsObj.plantPreset.yieldMax}</div>
                     <button className="operateBtn water" onClick={this.waterPlant}><b>Water</b></button><br />
                     <button className="operateBtn harvest" onClick={this.harvestPlant}><b>Harvest</b></button><br />
                     <button className="operateBtn sell" onClick={this.sellPlant}><b>Sell</b></button><br />
                 </div>
                 <div className="plantImg">
                     <div className="plantBody">
-                        <img src={currentPlantImgPath} alt="" />
+                        <img src={this.state.currentPlantImgPath} alt="" />
                     </div>
                     <div className="plantPot">
                         <img src={currentPotImgPath} alt="" />
                     </div>
                 </div>
+                {/*
+                <div className="msgPopUp">
+                    this is a simple message
+                </div>
+                {/* <div className="msgPopUpTriangle"></div> 绑定一个点击关闭对话窗事件 */}
+                */}
             </div>
         );
 

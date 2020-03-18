@@ -54,12 +54,12 @@ export const initialState = {
     plantPresets: [
         {
             name: "Plant A",
-            hydrationMax: 10,
+            hydrationMax: 20,
             yieldMax: 20,
             seedPrice: 5,
             fruitValue: 1,
             plantValue: 40,
-            lifeStageTime: [2, 3, 4, 5, 5],
+            lifeStageTime: [2, 3, 4, 5, 3],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
             identity: 0
         },
@@ -414,8 +414,9 @@ export const initialState = {
         // but all plants own a basic ability which is the "greeting words";
         plantPotList: [
             {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+                potIdentity: 0, // used to locate pot category in the pot presets and retrieve data
+                plantIdentity: 0, // used to locate plant category in the plant presets and retrieve data
+                positionAtCurrentArray: 0, // this is used to locate the current object in the plantPotList
                 customName: "Custom name", // a custom name given by the user upon creating a new plant
                 speciality: "News",
                 apiUrl: "",
@@ -423,92 +424,101 @@ export const initialState = {
                 lifeStagePointer: 0,
                 // the time elapsed at the current life stage, once it reaches the corresponding
                 // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
+                growingTime: 0,
+                currentHydration: 5,
+                currentYield: 5
             },
-            {
-                potIdentity: 5, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 12, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 3,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            },
-            {
-                potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "News",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 20
-            }
+            // {
+            //     potIdentity: 5, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 12, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 3,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 1 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 2 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 3 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 4 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 5 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 6 // this is used to locate the current object in the plantPotList
+            // },
+            // {
+            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
+            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
+            //     speciality: "News",
+            //     apiUrl: "",
+            //     // an index number dictating the current life stage, 0 means seed stage
+            //     lifeStagePointer: 0,
+            //     // the time elapsed at the current life stage, once it reaches the corresponding
+            //     // life stage time needed for next stage, the plant will proceed to next stage
+            //     growingTime: 1,
+            //     positionAtCurrentArray: 7 // this is used to locate the current object in the plantPotList
+            // }
         ],
         diaryList: [
             // Each element in the diaryList array has this type of data structure
@@ -530,7 +540,7 @@ export const initialState = {
         ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ownedCoins: 900, // The game coins/money that the player owns, can be used to buy things
         ownedPaper: 0, // The diary paper the player owns, can be used to write diary
-        ownedWater: 0, // The buckets of water the player owns, can be used to water plants
+        ownedWater: 100, // The buckets of water the player owns, can be used to water plants
         ownedLandMax: 5, // defines the total land pieces the user owns, once increased, it will stay
         usedLand: 1 // defines how many land pieces the user is using, among the total land pieces owned
     }

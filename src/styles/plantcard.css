@@ -10,6 +10,7 @@
     transition-duration: 75ms;
     transition-property: all;
     transition-timing-function: ease-in-out;
+    position: relative;
 }
 
 .plantcard:hover {
@@ -71,4 +72,49 @@
 .plantcard .plantImg .plantPot {
     width: 100%;
     height: 30%;
+}
+
+.plantcard .msgPopUp {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 190px;
+    max-height: 135px;
+    min-height: 65px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 20;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 5px;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.plantcard .msgPopUp::-webkit-scrollbar {
+    width: 0px;
+}
+
+.plantcard .msgPopUpTriangle {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 40px;
+    left: 193px;
+    border-style: solid;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgba(0, 0, 0, 0.7);
+    z-index: 20;
+}
+
+.plantcard .msgPopUpTriangle:hover {
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid red;
 }
