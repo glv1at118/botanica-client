@@ -410,111 +410,19 @@ export const initialState = {
         // special ability identifier strings(case sensitive): 
         // "chat", "news", "weather", "joke"
         plantPotList: [
-            {
-                potIdentity: 0, // used to locate pot category in the pot presets and retrieve data
-                plantIdentity: 0, // used to locate plant category in the plant presets and retrieve data
-                positionAtCurrentArray: 0, // this is used to locate the current object in the plantPotList
-                customName: "Custom name", // a custom name given by the user upon creating a new plant
-                speciality: "chat",
-                apiUrl: "",
-                // an index number dictating the current life stage, 0 means seed stage
-                lifeStagePointer: 0,
-                // the time elapsed at the current life stage, once it reaches the corresponding
-                // life stage time needed for next stage, the plant will proceed to next stage
-                growingTime: 0,
-                currentHydration: 99,
-                currentYield: 5
-            },
             // {
-            //     potIdentity: 5, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 12, // used to locate plant in the plant presets and retrieve data
+            //     potIdentity: 0, // used to locate pot category in the pot presets and retrieve data
+            //     plantIdentity: 0, // used to locate plant category in the plant presets and retrieve data
+            //     positionAtCurrentArray: 0, // this is used to locate the current object in the plantPotList
             //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 3,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 1 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
+            //     speciality: "chat",
             //     // an index number dictating the current life stage, 0 means seed stage
             //     lifeStagePointer: 0,
             //     // the time elapsed at the current life stage, once it reaches the corresponding
             //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 2 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 0,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 3 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 0,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 4 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 0,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 5 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 0,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 6 // this is used to locate the current object in the plantPotList
-            // },
-            // {
-            //     potIdentity: 0, // used to locate pot in the pot presets and retrieve data
-            //     plantIdentity: 0, // used to locate plant in the plant presets and retrieve data
-            //     customName: "Custom name", // a custom name given by the user upon creating a new plant
-            //     speciality: "News",
-            //     apiUrl: "",
-            //     // an index number dictating the current life stage, 0 means seed stage
-            //     lifeStagePointer: 0,
-            //     // the time elapsed at the current life stage, once it reaches the corresponding
-            //     // life stage time needed for next stage, the plant will proceed to next stage
-            //     growingTime: 1,
-            //     positionAtCurrentArray: 7 // this is used to locate the current object in the plantPotList
+            //     growingTime: 0,
+            //     currentHydration: 99,
+            //     currentYield: 5
             // }
         ],
         diaryList: [
@@ -528,16 +436,16 @@ export const initialState = {
         ],
         // [plantA seed count, plantB seed count, ..., plantP seed count]
         // 每个元素对应不同种子类别，从 A 到 P。元素的值代表拥有该类别种子的数量。
-        ownedSeeds: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ownedSeeds: [2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         // [pot0 count, pot1 count, ..., pot9 count]
         // 每个元素对应不同盆子类别，从 pot0 到 pot9。元素的值代表拥有该类别盆子的数量。
-        ownedPots: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ownedPots: [2, 2, 2, 2, 2, 0, 0, 0, 0, 0],
         // [plantA fruit count, plantB fruit count, ..., plantP fruit count]
         // 每个元素对应不同果实类别，从 A 到 P。元素的值代表拥有该类别果实的数量。
         ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ownedCoins: 900, // The game coins/money that the player owns, can be used to buy things
         ownedPaper: 0, // The diary paper the player owns, can be used to write diary
         ownedWater: 100, // The buckets of water the player owns, can be used to water plants
-        ownedLandMax: 5, // defines the total land pieces the user owns, once increased, it will stay
+        ownedLandMax: 30, // defines the total land pieces the user owns, once increased, it will stay
     }
 };

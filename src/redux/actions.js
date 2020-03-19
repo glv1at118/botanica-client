@@ -119,6 +119,13 @@ function removePlant(ownedPlantId) {
     };
 }
 
+function addNewPlant(newPlantPotInstance) {
+    return {
+        type: "ADD_NEW_PLANT",
+        newPlantPotInstance: newPlantPotInstance
+    };
+}
+
 function increaseCurrYield(ownedPlantId) {
     return {
         type: "INCREASE_CURR_YIELD",
@@ -133,4 +140,4 @@ function clearCurrYield(ownedPlantId) {
     };
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield };
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield, addNewPlant };

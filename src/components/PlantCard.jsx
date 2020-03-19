@@ -348,7 +348,7 @@ export default class PlantCard extends React.Component {
             }, 5000);
         } else if (this.props.creatureData.speciality === "news") {
             // special ability is showing the world latest news
-            let url = 'http://newsapi.org/v2/top-headlines?country=us&' + 'apiKey=2d8632aa8766423bb537fd74092883c8';
+            let url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=2d8632aa8766423bb537fd74092883c8';
             timer = setInterval(() => {
                 axios.get(url).then((response) => {
                     let articleArr = response.data.articles;
@@ -364,7 +364,7 @@ export default class PlantCard extends React.Component {
             }, 5000);
         } else if (this.props.creatureData.speciality === "weather") {
             // special ability is to show the weather at a location
-            let url = "http://api.openweathermap.org/data/2.5/forecast?id=6167865&" + "appid=0896d1641a623758aa32f46a077d07aa";
+            let url = "http://api.openweathermap.org/data/2.5/forecast?id=6167865&appid=0896d1641a623758aa32f46a077d07aa";
             timer = setInterval(() => {
                 axios.get(url).then((response) => {
                     let foreCastArr = response.data.list;

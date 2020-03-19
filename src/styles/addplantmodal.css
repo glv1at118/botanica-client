@@ -104,11 +104,6 @@
     background-color: #cccccc;
 }
 
-#newPlantSeedBox .right .down:hover {
-    background-color: #666666;
-    color: white;
-}
-
 .addPlantBox .addPlantWindow #midPlaceHolder #newPlantPotBox {
     float: left;
     height: 100%;
@@ -168,11 +163,6 @@
 
 #newPlantPotBox .right .down {
     background-color: #cccccc;
-}
-
-#newPlantPotBox .right .down:hover {
-    background-color: #666666;
-    color: white;
 }
 
 .addPlantBox .addPlantWindow #buttonBox {

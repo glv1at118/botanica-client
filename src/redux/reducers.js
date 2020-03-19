@@ -69,6 +69,9 @@ function myReducer(previousState = initialState, action) {
         case "REMOVE_PLANT":
             nextState.userData.plantPotList.splice(action.ownedPlantId, 1);
             return nextState;
+        case "ADD_NEW_PLANT":
+            nextState.userData.plantPotList.push(action.newPlantPotInstance);
+            return nextState;
         case "INCREASE_CURR_YIELD":
             nextState.userData.plantPotList[action.ownedPlantId].currentYield++;
             return nextState;
