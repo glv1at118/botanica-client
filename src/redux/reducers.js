@@ -67,7 +67,12 @@ function myReducer(previousState = initialState, action) {
             nextState.userData.plantPotList[action.ownedPlantId].currentHydration += action.hydrationAmount;
             return nextState;
         case "REMOVE_PLANT":
-            nextState.userData.plantPotList.splice(action.ownedPlantId, 1);
+            let arr = nextState.userData.plantPotList;
+            arr.splice(action.ownedPlantId, 1); // remove the plant from plantPotList
+            // reorder the positionAtcurrentArray in the plantPotList after an item is removed
+            for (let i = action.ownedPlantId; i < arr.length; i++) {
+                arr[i].positionAtCurrentArray--;
+            }
             return nextState;
         case "ADD_NEW_PLANT":
             nextState.userData.plantPotList.push(action.newPlantPotInstance);
@@ -77,6 +82,9 @@ function myReducer(previousState = initialState, action) {
             return nextState;
         case "CLEAR_CURR_YIELD":
             nextState.userData.plantPotList[action.ownedPlantId].currentYield = 0;
+            return nextState;
+        case "UPDATE_MSG_ARR":
+            nextState.userData.plantPotList[action.ownedPlantId].messageArray = action.msgArr;
             return nextState;
         default:
             return previousState;

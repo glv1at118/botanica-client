@@ -1,5 +1,5 @@
 export const initialState = {
-    potPresets: [
+    potPresets: [ // these are the botanica's flower pot presets, defines a pot's data
         {
             name: "Plant Pot 0",
             price: 10,
@@ -51,26 +51,26 @@ export const initialState = {
             identity: 9
         }
     ],
-    plantPresets: [
+    plantPresets: [ // These are the botanica plant presets templates. Defines a plant's various data
         {
             name: "Plant A",
-            hydrationMax: 99,
-            yieldMax: 20,
-            seedPrice: 5,
+            hydrationMax: 50,
+            yieldMax: 50,
+            seedPrice: 10,
             fruitValue: 1,
-            plantValue: 40,
+            plantValue: 15,
             lifeStageTime: [2, 3, 4, 5, 3],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
             identity: 0
         },
         {
             name: "Plant B",
-            hydrationMax: 10,
-            yieldMax: 20,
-            seedPrice: 5,
-            fruitValue: 1,
-            plantValue: 40,
-            lifeStageTime: [2, 3, 4, 5, 5],
+            hydrationMax: 80,
+            yieldMax: 80,
+            seedPrice: 20,
+            fruitValue: 2,
+            plantValue: 25,
+            lifeStageTime: [5, 6, 7, 8, 5],
             lifeStageName: ["Seed", "Sprout", "Sapling", "Growth", "Ripeness"],
             identity: 1
         },
@@ -229,7 +229,7 @@ export const initialState = {
             identity: 15
         }
     ],
-    shopProducts: {
+    shopProducts: { // the products listed on the shelf in the shop
         seeds: [
             {
                 seedName: "Plant A's Seed",
@@ -368,7 +368,7 @@ export const initialState = {
         water: 5, // 5$ per 10 unit. Each click you buy 10 buckets of water
         paper: 10 // 10$ per 1 unit.
     },
-    greetingsPresets: [
+    greetingsPresets: [ // If a plant's speciality is "chat", then it will retrieve the greetings from here
         "HI! HOW ARE YOU TODAY?",
         "I LIKE YOU, DO YOU LIKE ME?",
         "WHAT IS BOTANICA? BOTANICA IS THIS EPIC BOTANICA I AM LIVING IN!",
@@ -409,7 +409,8 @@ export const initialState = {
         // upon creating a new plant, it will randomly get one of the following 4 special abilities:
         // special ability identifier strings(case sensitive): 
         // "chat", "news", "weather", "joke"
-        plantPotList: [
+        plantPotList: [ // This array represents all the plantPots in the garden that the user owns
+            // Each element in the plantPotList array has the following structure
             // {
             //     potIdentity: 0, // used to locate pot category in the pot presets and retrieve data
             //     plantIdentity: 0, // used to locate plant category in the plant presets and retrieve data
@@ -422,7 +423,8 @@ export const initialState = {
             //     // life stage time needed for next stage, the plant will proceed to next stage
             //     growingTime: 0,
             //     currentHydration: 99,
-            //     currentYield: 5
+            //     currentYield: 5,
+            //     messageArray: []
             // }
         ],
         diaryList: [
@@ -436,10 +438,10 @@ export const initialState = {
         ],
         // [plantA seed count, plantB seed count, ..., plantP seed count]
         // 每个元素对应不同种子类别，从 A 到 P。元素的值代表拥有该类别种子的数量。
-        ownedSeeds: [2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ownedSeeds: [2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         // [pot0 count, pot1 count, ..., pot9 count]
         // 每个元素对应不同盆子类别，从 pot0 到 pot9。元素的值代表拥有该类别盆子的数量。
-        ownedPots: [2, 2, 2, 2, 2, 0, 0, 0, 0, 0],
+        ownedPots: [2, 2, 0, 0, 0, 0, 0, 0, 0, 0],
         // [plantA fruit count, plantB fruit count, ..., plantP fruit count]
         // 每个元素对应不同果实类别，从 A 到 P。元素的值代表拥有该类别果实的数量。
         ownedFruits: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],

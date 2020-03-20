@@ -161,7 +161,8 @@ export default class AddPlantModal extends React.Component {
                 lifeStagePointer: 0,
                 growingTime: 0,
                 currentHydration: reduxStore.getState().plantPresets[this.state.seedIdChosen].hydrationMax,
-                currentYield: 0
+                currentYield: 0,
+                messageArray: []
             };
             reduxStore.dispatch(addNewPlant(newPlantPotItem));
             this.handleCancel();
@@ -184,7 +185,6 @@ export default class AddPlantModal extends React.Component {
                 ownedPotsCopy[x]--;
             }
         }
-        console.log(seedsCascadeList); // [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
         let seedsImgPathObj = {
             seed_0,
             seed_1,
@@ -231,7 +231,7 @@ export default class AddPlantModal extends React.Component {
                                             <img alt="" src={seedsImgPathObj["seed_" + item]} />
                                         </div>
                                         <div className="right">
-                                            <div className="up">Seed Name: {reduxStore.getState().plantPresets[item].name + "\'s seed"}</div>
+                                            <div className="up">Seed Name: {reduxStore.getState().plantPresets[item].name + "'s seed"}</div>
                                             <div className="down">
                                                 <div style={this.seedBtnColor(index)} onClick={() => (this.chooseSeed(item, index))}>{this.seedSelectedOrNotText(index)}</div>
                                             </div>

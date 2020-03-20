@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 function removeDiary(diaryDateMilliSec) {
     return {
         type: "REMOVE_DIARY",
@@ -140,4 +142,54 @@ function clearCurrYield(ownedPlantId) {
     };
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield, addNewPlant };
+// this is sync action creator triggering update of the messageArray
+// not to be manually invoked, it's only used by the loadMsgArrAsync action creator below
+// so it's not exported
+function updateMsgArr(msgArr, ownedPlantId) {
+    return {
+        type: "UPDATE_MSG_ARR",
+        msgArr: msgArr,
+        ownedPlantId: ownedPlantId
+    };
+}
+
+// thunk action creator function, returns a thunk function, accepting dispatch and getState
+// when dispatching this action creator, it will make GET request
+function loadMsgArrAsync(ownedPlantId) {
+    return function (dispatch, getState) {
+        if (getState().userData.plantPotList[ownedPlantId].speciality === "chat") {
+            // special ability is chatting, retrieving pre-stored chat messages in redux store
+            let greetingsPresetsArr = getState().greetingsPresets;
+            dispatch(updateMsgArr(greetingsPresetsArr, ownedPlantId));
+        } else if (getState().userData.plantPotList[ownedPlantId].speciality === "news") {
+            // special ability is showing the world latest news
+            let url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=2d8632aa8766423bb537fd74092883c8';
+            axios.get(url).then((response) => {
+                let articleArr = response.data.articles;
+                dispatch(updateMsgArr(articleArr, ownedPlantId));
+            }).catch((error) => {
+                console.log(error);
+            });
+        } else if (getState().userData.plantPotList[ownedPlantId].speciality === "weather") {
+            // special ability is to show the weather at Toronto
+            let url = "http://api.openweathermap.org/data/2.5/forecast?id=6167865&appid=0896d1641a623758aa32f46a077d07aa";
+            axios.get(url).then((response) => {
+                let foreCastArr = response.data.list;
+                dispatch(updateMsgArr(foreCastArr, ownedPlantId));
+            }).catch((error) => {
+                console.log(error);
+            });
+        } else if (getState().userData.plantPotList[ownedPlantId].speciality === "joke") {
+            // special ability is to tell some programmer's jokes
+            let url = "https://official-joke-api.appspot.com/jokes/ten";
+            axios.get(url).then((response) => {
+                let jokesArr = response.data;
+                dispatch(updateMsgArr(jokesArr, ownedPlantId));
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
+    }
+}
+
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield, addNewPlant, loadMsgArrAsync };

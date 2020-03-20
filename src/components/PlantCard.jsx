@@ -11,10 +11,10 @@ import {
     changeBalance,
     increaseCurrYield,
     clearCurrYield,
-    changeOwnedFruits
+    changeOwnedFruits,
+    loadMsgArrAsync
 } from '../redux/actions.js';
 import '../styles/plantcard.css';
-import axios from 'axios';
 
 import plant_0_0 from "../assets/plant/plant_A_0.png";
 import plant_0_1 from "../assets/plant/plant_A_1.png";
@@ -116,11 +116,10 @@ export default class PlantCard extends React.Component {
             growingTimer: -1,
             waterTimer: -1,
             yieldTimer: -1,
-            conversationTimer: -1,
             popUpTimer: -1,
             message: "LOADING......",
-            visibilityObj: {
-                visibility: "hidden"
+            displayObj: {
+                display: "none"
             }
         };
         this.retrievePlantPotPresets = this.retrievePlantPotPresets.bind(this);
@@ -131,7 +130,6 @@ export default class PlantCard extends React.Component {
         this.stageGrowingTimeRunner = this.stageGrowingTimeRunner.bind(this);
         this.waterConsumptionRunner = this.waterConsumptionRunner.bind(this);
         this.yieldRunner = this.yieldRunner.bind(this);
-        this.updateMessageRunner = this.updateMessageRunner.bind(this);
         this.popUpDialogRunner = this.popUpDialogRunner.bind(this);
         this.closePopUpDialog = this.closePopUpDialog.bind(this);
     }
@@ -141,19 +139,19 @@ export default class PlantCard extends React.Component {
         this.stageGrowingTimeRunner();
         this.waterConsumptionRunner();
         this.yieldRunner();
-        this.updateMessageRunner();
         this.popUpDialogRunner();
+        // Upon component mount, make "GET" request to api urls to retrieve data
+        reduxStore.dispatch(loadMsgArrAsync(this.props.creatureData.positionAtCurrentArray));
     }
     componentWillUnmount() {
         clearInterval(this.state.growingTimer);
         clearInterval(this.state.waterTimer);
         clearInterval(this.state.yieldTimer);
-        clearInterval(this.state.conversationTimer);
         clearInterval(this.state.popUpTimer);
     }
     stageGrowingTimeRunner() {
         let timer = setInterval(() => {
-            let tmp1 = reduxStore.getState().userData.plantPotList[this.props.creatureData.positionAtCurrentArray].growingTime;
+            let tmp1 = this.props.creatureData.growingTime;
             let tmp2 = reduxStore.getState().plantPresets[this.props.creatureData.plantIdentity].lifeStageTime[this.props.creatureData.lifeStagePointer];
             if (tmp1 >= tmp2) {
                 // 此阶段生长时间达到需要的生长时间，升级到下一阶段。
@@ -176,9 +174,6 @@ export default class PlantCard extends React.Component {
             // if the hydration level of the current plant reaches 0, then the plant "dies", remove it
             if (this.props.creatureData.currentHydration <= 0) {
                 reduxStore.dispatch(removePlant(this.props.creatureData.positionAtCurrentArray));
-                // 植物移除之后，自然和它相关的所有计时器都没有了意义，一并移除
-                clearInterval(this.state.growingTimer);
-                clearInterval(this.state.waterTimer);
             }
         }, 10000);
         this.setState({
@@ -323,99 +318,69 @@ export default class PlantCard extends React.Component {
     sellPlant() {
         let confirmation = window.confirm("ARE YOU SURE TO SELL THIS PLANT?");
         if (confirmation) {
-            reduxStore.dispatch(removePlant(this.props.creatureData.positionAtCurrentArray));
-            // 植物移除之后，自然和它相关的所有计时器都没有了意义，一并移除
-            clearInterval(this.state.growingTimer);
-            clearInterval(this.state.waterTimer);
             // 把收益添加到用户账户
             let presetsObj = this.retrievePlantPotPresets();
             let earn = presetsObj.plantPreset.plantValue + presetsObj.potPreset.price;
             reduxStore.dispatch(changeBalance(earn));
+            // 移除植物
+            reduxStore.dispatch(removePlant(this.props.creatureData.positionAtCurrentArray));
         }
     }
-    updateMessageRunner() {
-        let timer;
-        // these strings must be used for special abilities strings
-        if (this.props.creatureData.speciality === "chat") {
-            // special ability is chatting, retrieving pre-stored chat messages in redux store
-            timer = setInterval(() => {
-                let greetingsPresetsArr = reduxStore.getState().greetingsPresets;
-                let length = greetingsPresetsArr.length;
-                let random = Math.floor(Math.random() * length);
-                this.setState({
-                    message: greetingsPresetsArr[random]
-                });
-            }, 5000);
-        } else if (this.props.creatureData.speciality === "news") {
-            // special ability is showing the world latest news
-            let url = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=2d8632aa8766423bb537fd74092883c8';
-            timer = setInterval(() => {
-                axios.get(url).then((response) => {
-                    let articleArr = response.data.articles;
-                    let randomPick = Math.floor(Math.random() * articleArr.length);
-                    let chosenArticle = articleArr[randomPick];
+    popUpDialogRunner() {
+        let timer = setInterval(() => {
+            let messageArray = this.props.creatureData.messageArray;
+            switch (this.props.creatureData.speciality) {
+                case "chat":
+                    let length = messageArray.length;
+                    let random = Math.floor(Math.random() * length);
+                    this.setState({
+                        message: messageArray[random]
+                    });
+                    break;
+                case "news":
+                    let randomPick = Math.floor(Math.random() * messageArray.length);
+                    let chosenArticle = messageArray[randomPick];
                     let retrievedMsg = chosenArticle.title + ", " + chosenArticle.publishedAt + ", " + chosenArticle.source.name + ", " + chosenArticle.description;
                     this.setState({
                         message: retrievedMsg
                     });
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }, 5000);
-        } else if (this.props.creatureData.speciality === "weather") {
-            // special ability is to show the weather at a location
-            let url = "http://api.openweathermap.org/data/2.5/forecast?id=6167865&appid=0896d1641a623758aa32f46a077d07aa";
-            timer = setInterval(() => {
-                axios.get(url).then((response) => {
-                    let foreCastArr = response.data.list;
-                    let cityName = response.data.city.name;
-                    let weatherCondition = foreCastArr[3].weather[0].description;
-                    let foreCastTime = foreCastArr[3].dt_txt;
-                    let temperature = Math.floor(foreCastArr[3].main.temp - 273.15);
-                    let feelsLikeTemp = Math.floor(foreCastArr[3].main.feels_like - 273.15);
-                    let humidity = foreCastArr[3].main.humidity;
+                    break;
+                case "weather":
+                    let cityName = "Toronto";
+                    let weatherCondition = messageArray[3].weather[0].description;
+                    let foreCastTime = messageArray[3].dt_txt;
+                    let temperature = Math.floor(messageArray[3].main.temp - 273.15);
+                    let feelsLikeTemp = Math.floor(messageArray[3].main.feels_like - 273.15);
+                    let humidity = messageArray[3].main.humidity;
                     let weatherString = cityName + ", " + foreCastTime + ", Weather Condition: " + weatherCondition + ", Temperature(c): " + temperature + ", Feels Like(c): " + feelsLikeTemp + ", Humidity: " + humidity;
                     this.setState({
                         message: weatherString
                     });
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }, 5000);
-        } else if (this.props.creatureData.speciality === "joke") {
-            // special ability is to tell some programmer's jokes
-            let url = "https://official-joke-api.appspot.com/jokes/random";
-            timer = setInterval(() => {
-                axios.get(url).then((response) => {
-                    let setup = response.data.setup;
-                    let punchline = response.data.punchline;
+                    break;
+                case "joke":
+                    let len = messageArray.length;
+                    let ran = Math.floor(Math.random() * len);
+                    let setup = messageArray[ran].setup;
+                    let punchline = messageArray[ran].punchline;
                     let combined = setup + " " + punchline;
                     this.setState({
                         message: combined
                     });
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }, 5000);
-        }
-        this.setState({
-            conversationTimer: timer
-        });
-    }
-    popUpDialogRunner() {
-        let timer = setInterval(() => {
+                    break;
+                default:
+                    this.setState({
+                        message: "LOADING......"
+                    });
+                    break;
+            }
             this.setState({
-                visibilityObj: {
-                    visibility: "visible"
+                displayObj: {
+                    display: "block"
                 }
             });
             setTimeout(() => {
-                this.setState({
-                    visibilityObj: {
-                        visibility: "hidden"
-                    }
-                });
-            }, 3000);
+                this.closePopUpDialog();
+            }, 4500);
         }, 10000);
         this.setState({
             popUpTimer: timer
@@ -423,8 +388,8 @@ export default class PlantCard extends React.Component {
     }
     closePopUpDialog() {
         this.setState({
-            visibilityObj: {
-                visibility: "hidden"
+            displayObj: {
+                display: "none"
             }
         });
     }
@@ -465,7 +430,7 @@ export default class PlantCard extends React.Component {
                         <img src={currentPotImgPath} alt="" />
                     </div>
                 </div>
-                <div className="msgPopUp" onClick={this.closePopUpDialog} style={this.state.visibilityObj}>{this.state.message}</div>
+                <div className="msgPopUp" onClick={this.closePopUpDialog} style={this.state.displayObj}>{this.state.message}</div>
             </div>
         );
 

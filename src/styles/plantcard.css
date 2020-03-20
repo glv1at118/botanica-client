@@ -76,12 +76,12 @@
 
 .plantcard .msgPopUp {
     background-color: rgba(255, 255, 255, 0.95);
-    width: 200px;
-    max-height: 135px;
+    width: 140px;
+    max-height: 130px;
     min-height: 65px;
     position: absolute;
-    top: 3px;
-    left: 3px;
+    bottom: 3px;
+    right: 3px;
     z-index: 20;
     border-radius: 5px;
     font-size: 14px;
