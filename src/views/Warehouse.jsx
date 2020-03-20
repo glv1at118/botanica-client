@@ -167,8 +167,8 @@ export default class Warehouse extends React.Component {
                                             <div className="count">{item}</div>
                                         </div>
                                         <div className="child2">
-                                            <div>Fruit Name: {"to be determined!!"}</div>
-                                            <div>Original Name: {plantPresets[index].name}'s fruit</div>
+                                            <div>Fruit Name: {plantPresets[index].name}'s fruit</div>
+                                            <div>Origin Plant: {plantPresets[index].name}</div>
                                             <div>Value Per Unit ($): {plantPresets[index].fruitValue}</div>
                                         </div>
                                     </li>

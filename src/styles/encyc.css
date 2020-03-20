@@ -1,0 +1,50 @@
+#encyc {
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#encyc h4.title {
+    background-color: yellow;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+#encyc h4.background {
+    background-color: red;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+#encyc p.background {
+    background-color: yellow;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+#encyc h4.features {
+    background-color: red;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+#encyc ol.features li {
+    background-color: yellow;
+    list-style-type: decimal;
+    list-style-position: inside;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
