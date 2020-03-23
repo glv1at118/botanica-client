@@ -1,5 +1,5 @@
 #encyc {
-    background-color: aquamarine;
+    background-color: yellowgreen;
     width: 100%;
     height: 100%;
     font-size: 30px;
@@ -7,44 +7,207 @@
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
+    position: relative;
+    text-align: center;
 }
 
 #encyc h4.title {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.8);
     margin-bottom: 40px;
     width: 100%;
     height: 50px;
     line-height: 50px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.title:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    color: blue;
 }
 
 #encyc h4.background {
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 40px;
     line-height: 40px;
     text-decoration: underline;
     margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.background:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 #encyc p.background {
-    background-color: yellow;
+    background-color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
     margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc p.background:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 #encyc h4.features {
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 40px;
     line-height: 40px;
     text-decoration: underline;
     margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.features:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 #encyc ol.features li {
-    background-color: yellow;
+    background-color: rgba(255, 255, 255, 0.8);
     list-style-type: decimal;
     list-style-position: inside;
     font-size: 24px;
     margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc ol.features li:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc ol {
+    margin-bottom: 40px;
+}
+
+#encyc h4.techniques {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.techniques:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc p.techniques {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc p.techniques:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc h4.author {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.author:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc p.author {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc p.author:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc h4.links {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc h4.links:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#encyc ol.links li {
+    background-color: rgba(255, 255, 255, 0.8);
+    list-style-type: decimal;
+    list-style-position: inside;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition-duration: 75ms;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+}
+
+#encyc ol.links li:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+strong {
+    color: blue;
+    font-style: italic;
 }
