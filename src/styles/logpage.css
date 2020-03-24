@@ -1,0 +1,205 @@
+#logpage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-width: 1536px;
+    min-height: 754.4px;
+    background-color: skyblue;
+}
+
+#appPicture {
+    width: 70%;
+    height: 170px;
+    position: absolute;
+    left: 15%;
+    top: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#forms {
+    width: 70%;
+    height: 430px;
+    position: absolute;
+    left: 15%;
+    top: 235px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+#tags {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+#tags .tag1 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+#tags .tag2 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+#login {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+#login form {
+    width: 70%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    border-radius: 10px;
+}
+
+div.loginclass1 {
+    width: 100%;
+    height: 25%;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+div.loginclass1 input {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 28px;
+    border-radius: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+div.loginclass1 input:focus {
+    border-bottom: 2px solid #666;
+}
+
+div.loginclass1 button {
+    outline: none;
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+div.loginclass1 button:active {
+    background-color: #666;
+    color: white;
+}
+
+#register {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+#register form {
+    width: 100%;
+    height: 350px;
+}
+
+#register form .leftPart {
+    float: left;
+    width: 75%;
+    height: 350px;
+}
+
+#register form .rightPart {
+    float: left;
+    width: 25%;
+    height: 350px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#register form .leftPart .registerclass {
+    width: 100%;
+    height: 20%;
+    margin-top: 30px;
+    position: relative;
+}
+
+#register form .leftPart .registerclass input {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    border-style: none;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 28px;
+    border-radius: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+#register form .leftPart .registerclass input:focus {
+    border-bottom: 2px solid #666;
+}
+
+#register form .leftPart .registerclass button {
+    outline: none;
+    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#register form .leftPart .registerclass button:active {
+    background-color: #666;
+    color: white;
+}
+
+#register div.rightPart ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#register div.rightPart ul li {
+    width: 50%;
+    float: left;
+}
+
+#register img.avatarChoose {
+    width: 100%;
+    height: 130px;
+}
+
+#register div.chooseAva {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    border: 1px solid #666;
+}

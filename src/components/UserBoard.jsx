@@ -35,7 +35,7 @@ export default class UserBoard extends React.Component {
             <div id="userboard">
                 <section id="userSec1">
                     <section id="userSec1_left">
-                        <img src={require("../assets/user/20.png")} alt="" />
+                        <img src={require("../assets/user/6.png")} alt="" />
                     </section>
                     <section id="userSec1_right">
                         <section id="userSec1_right_up">Guannan001</section>
