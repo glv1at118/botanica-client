@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/playground/" component={Playground}></Route>
           <Route path="/login" component={Logpage}></Route>
-          <Redirect to="/playground/"></Redirect>
+          <Route path="/playground/" component={Playground}></Route>
+          <Redirect to="/login/"></Redirect>
         </Switch>
       </div>
     </BrowserRouter>

@@ -86,6 +86,9 @@ function myReducer(previousState = initialState, action) {
         case "UPDATE_MSG_ARR":
             nextState.userData.plantPotList[action.ownedPlantId].messageArray = action.msgArr;
             return nextState;
+        case "UPDATE_SAVE":
+            nextState = action.cloudSave;
+            return nextState;
         default:
             return previousState;
     }

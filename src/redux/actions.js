@@ -192,4 +192,11 @@ function loadMsgArrAsync(ownedPlantId) {
     }
 }
 
-export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield, addNewPlant, loadMsgArrAsync };
+function updateSave(cloudSave) { // 用于同步mongodb云端数据库存档到前端应用本地redux store的方法
+    return {
+        type: "UPDATE_SAVE",
+        cloudSave: cloudSave
+    }
+}
+
+export { removeDiary, addDiary, reverseDiaryOrder, changeBalance, changePaper, emptyAllFruits, changeOwnedSeeds, changeOwnedPots, changeOwnedFruits, changeWater, changeLandMax, increaseGrowingTime, resetGrowingTime, increaseLifeStagePointer, decreaseHydration, increaseHydration, removePlant, increaseCurrYield, clearCurrYield, addNewPlant, loadMsgArrAsync, updateSave };

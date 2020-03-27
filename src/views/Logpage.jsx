@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/logpage.css';
+
 import appPicture from '../assets/misc/botanica.png';
 import appPicture1 from '../assets/misc/botanica1.png';
 
@@ -147,7 +148,7 @@ export default class Logpage extends React.Component {
                         <div className="tag2" onClick={this.switchTag2} style={this.state.styleObj4}>Register</div>
                     </div>
                     <div id="login" style={this.state.styleObj1}>
-                        <form action="" method="POST">
+                        <form action="/login" method="POST">
                             <div className="loginclass1">
                                 <input type="text" name="username" placeholder="Your user name" />
                             </div>
