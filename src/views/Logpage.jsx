@@ -161,13 +161,17 @@ export default class Logpage extends React.Component {
                         </form>
                     </div>
                     <div id="register" style={this.state.styleObj2}>
-                        <form action="" method="POST">
+                        <form action="/register" method="POST">
                             <div className="leftPart">
                                 <div className="registerclass">
                                     <input type="text" name="username" placeholder="New user name" />
                                 </div>
                                 <div className="registerclass">
                                     <input type="password" name="password" placeholder="New password" />
+                                </div>
+                                <div>
+                                    <input type="number" name="headimgindex" value={this.state.lastChosenBtnId} style={{ "visibility": "hidden", "position": "absolute", "top": "0px", "left": "0px" }} readOnly />
+                                    {/* the purpose of this input is merely to retrieve the chosen avatar image index from the component state, and later this image index can be sent upon form submit, so the server will receive a variable called headimgindex. that's why this input is set display none and readOnly, because you don't need to change it directly. You change its value via component state */}
                                 </div>
                                 <div className="registerclass">
                                     <button>Register Account</button>
