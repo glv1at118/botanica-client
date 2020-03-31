@@ -327,6 +327,7 @@ export default class PlantCard extends React.Component {
         }
     }
     popUpDialogRunner() {
+        let randomPopUpInterval = Math.floor(Math.random() * 10 + 20); // from 20 - 29 integer, included
         let timer = setInterval(() => {
             let messageArray = this.props.creatureData.messageArray;
             switch (this.props.creatureData.speciality) {
@@ -380,8 +381,8 @@ export default class PlantCard extends React.Component {
             });
             setTimeout(() => {
                 this.closePopUpDialog();
-            }, 4500);
-        }, 10000);
+            }, 12000);
+        }, randomPopUpInterval * 1000);
         this.setState({
             popUpTimer: timer
         });

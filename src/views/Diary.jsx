@@ -41,7 +41,6 @@ export default class Diary extends React.Component {
             });
         }
         reduxStore.dispatch(reverseDiaryOrder());
-
     }
 
     readDiary = (diaryDateMilliSec) => {
