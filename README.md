@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### What is Botanica?
 
-## Available Scripts
+Botanica is a fun full stack project designed and developed by me using the MERN techniques (Mongodb, Express.js, React.js/Redux.js, Node.js). In Botanica, a user/player can perform multiple interesting activities including but not limited to: Buying seeds and flower pots, planting new plants, taking care of plants, managing the warehouse, harvesting fruits, earn game coins, and writing diaries...... So fundamentally, this is a web application about plants and user's playground.
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Application Features
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- **Every plant in Botanica is dynamic.** They will actually grow from a seed till they reach their ripeness and then produce fruits continuously. If it runs out of hydration it will actually die and get removed from the garden. The plants need your care often.
+- **Each plant in Botanica comes with a specialty.** You will never know its specialty until you plant it in the garden. The specialty determines what the plant can offer you real-time. May it tell you a joke, get you the latest news world-wide, give you a tomorrow's weather forecast, or simply talk with you briefly? It's your time to discover. **Each plant will automatically pop up a dialog bubble when it "invokes its ability".**
+- **Writing a diary is not free in Botanica** (Because the paper resource is scarce in the world of Botanica). Your plants is your mere source of in-app income. **Harvest more fruits and sell them later to gain coins.** Then you can consider to buy some diary paper to write down some important things.
+- Abundance of choices: Up to 16 types of plant options, 10 types of vegetation pot options, and 4 kinds of plant-owned specialties, which comes to **a total number of 16 × 10 × 4 = 640 creature combinations.** The only limitation is your imagination!
+- **Botanica's user save is stored in cloud** and will be synchronized (downloaded) automatically next time when the application is launched, meaning there will be no data loss. This is a full stack application which **requires an internet connection.** You can **log in a previous account or register a new account.**
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### Live Demos
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://youtu.be/HBHhfoWkHAE (video length 2:41, intro about the login and register)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+https://youtu.be/7dVBv8R6sAM (video length 5:30, intro about the warehouse and shop)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://youtu.be/aySA3lroYPg (video length 1:58, intro about the diary)
 
-### `yarn eject`
+https://youtu.be/4G9DSn89jbY (video length 2:11, intro about the encyclopedia)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://youtu.be/eMaEO0m3Fjo (video length 3:48, intro about saving and retrieving data from cloud)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Snapshots
 
-## Learn More
+![1](https://user-images.githubusercontent.com/44102726/78182816-db06d180-7434-11ea-84eb-3f8128506153.JPG)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![2](https://user-images.githubusercontent.com/44102726/78182819-dcd09500-7434-11ea-9460-9a128c5470c5.JPG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![3](https://user-images.githubusercontent.com/44102726/78182821-de9a5880-7434-11ea-83a0-fbc35b565fcf.JPG)
 
-### Code Splitting
+![4](https://user-images.githubusercontent.com/44102726/78182824-e0641c00-7434-11ea-9f56-ed7c47e23e98.JPG)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![5](https://user-images.githubusercontent.com/44102726/78182831-e35f0c80-7434-11ea-84c8-4c48d5250ac2.JPG)
 
-### Analyzing the Bundle Size
+![6](https://user-images.githubusercontent.com/44102726/78182836-e4903980-7434-11ea-8e6b-a95004fc6fe6.JPG)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![7](https://user-images.githubusercontent.com/44102726/78183255-962f6a80-7435-11ea-9f42-c7ae75d9a00d.JPG)
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+### Programming Techniques
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Javascript (ES5/ES6), HTML5, CSS3, React.js, Redux.js, React-Router-Dom, Redux-Thunk, Node.js, Express.js, Mongodb, Mongodb Atlas Cluster, Axios.js, Lodash
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
+### How to Run
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This is only the front end of Botanica. To run it in development mode:
+
+1. **yarn install** - Install the dependencies
+2. **yarn start** - Start the local development server at http://localhost:3000
+3. **yarn build** - Bundle the source codes into compact production build for backend serve
+4. To run the application with full functionalities, run **yarn build**, then move the **build folder** to botanica-server and from the server side run **node ./botanica-server.js**
