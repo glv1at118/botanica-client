@@ -60,3 +60,9 @@ This is only the front end of Botanica. To run it in development mode:
 2. **yarn start** - Start the local development server at http://localhost:3000
 3. **yarn build** - Bundle the source codes into compact production build for backend serve
 4. To run the application with full functionalities, run **yarn build**, then move the **build folder** to botanica-server and from the server side run **node ./botanica-server.js**
+
+
+
+### See Also
+
+botanica-server: https://github.com/glv1at118/botanica-server
